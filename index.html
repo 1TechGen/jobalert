@@ -3,10 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Get instant job alerts for State & Central Government jobs. Stay updated with daily job notifications and never miss an opportunity.">
-    <meta name="keywords" content="job alert, government jobs, state jobs, central government jobs, job notifications, free job alerts">
+    <meta name="description" content="Get instant job alerts for State & Central Government jobs in India. Stay updated with daily job notifications and never miss an opportunity.">
+    <meta name="keywords" content="job alert, government jobs, state jobs, central government jobs, job notifications, free job alerts, India jobs">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Job Alert Team">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Job Alert - Free Government Job Notifications">
+    <meta property="og:description" content="Subscribe for daily State and Central Government job alerts. Find the latest job opportunities across India.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jobalert.example">
+    <meta property="og:image" content="https://jobalert.example/images/logo.png">
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Job Alert - Free Government Job Notifications">
+    <meta name="twitter:description" content="Subscribe for daily State and Central Government job alerts. Find the latest job opportunities across India.">
+    <meta name="twitter:image" content="https://jobalert.example/images/logo.png">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://jobalert.example">
+    <!-- Sitemap -->
+    <link rel="sitemap" href="/sitemap.xml">
     <title>Job Alert - Free Government Job Notifications</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google AdSense Script -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
     <style>
         :root {
             --primary-color: #004d99;
@@ -147,8 +167,24 @@
             color: white;
         }
 
+        /* Advertisement Space */
+        .ad-space {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            text-align: center;
+            background-color: var(--light-color);
+        }
+
+        .ad-space ins {
+            display: inline-block;
+            width: 300px;
+            height: 250px;
+        }
+
         /* Main Content */
-        .main-content {
+        main {
             flex: 1;
             padding: 20px 0;
         }
@@ -481,16 +517,18 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            padding: 10px 15px;
+            padding: 15px;
             background-color: var(--success-color);
             color: white;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
-            display: flex;
-            align-items: center;
             z-index: 1000;
             transform: translateX(150%);
             transition: transform 0.3s;
+            max-width: 500px;
+            max-height: 300px;
+            overflow-y: auto;
+            line-height: 1.4;
         }
 
         .alert.show {
@@ -499,6 +537,12 @@
 
         .alert i {
             margin-right: 10px;
+        }
+
+        .alert pre {
+            white-space: pre-wrap;
+            margin: 0;
+            font-size: 14px;
         }
 
         /* Responsive Styles */
@@ -556,6 +600,17 @@
             .job-cards, .notification-cards, .announcement-cards, .update-cards, .other-cards, .education-job-cards {
                 grid-template-columns: 1fr;
             }
+
+            .alert {
+                max-width: 90%;
+                bottom: 10px;
+                right: 10px;
+            }
+
+            .ad-space ins {
+                width: 100%;
+                height: auto;
+            }
         }
     </style>
 </head>
@@ -565,10 +620,10 @@
         <div class="container">
             <nav class="navbar">
                 <a href="#" class="logo">
-                    <i class="fas fa-bell"></i>
+                    <i class="fas fa-bell" aria-label="Job Alert Logo"></i>
                     Job Alert
                 </a>
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
                     <i class="fas fa-bars"></i>
                 </button>
                 <ul class="nav-links" id="navLinks">
@@ -598,6 +653,19 @@
                 <li><a href="#" data-filter="railway">Railway</a></li>
                 <li><a href="#" data-filter="defense">Defense</a></li>
             </ul>
+            <!-- Advertisement Space -->
+            <div class="ad-space">
+                <!-- Replace 'ca-pub-XXXXXXXXXXXXXXXX' and '1234567890' with your AdSense client ID and ad slot ID -->
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:300px;height:250px"
+                     data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                     data-ad-slot="1234567890"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
             <h3>Resources</h3>
             <ul class="sidebar-links">
                 <li><a href="#notifications">Notifications</a></li>
@@ -609,121 +677,124 @@
             </ul>
         </aside>
 
-        <!-- Job Listings Section -->
-        <section class="main-content job-listings" id="jobs">
-            <div class="section-title">
-                <h2>Latest Government Jobs</h2>
-            </div>
-            <div class="job-filters">
-                <input type="text" class="search-bar" id="searchBar" placeholder="Search jobs by keyword...">
-                <button class="filter-btn active" data-filter="all">All Jobs</button>
-                <button class="filter-btn" data-filter="central">Central Govt</button>
-                <button class="filter-btn" data-filter="state">State Govt</button>
-                <button class="filter-btn" data-filter="banking">Banking</button>
-                <button class="filter-btn" data-filter="railway">Railway</button>
-                <button class="filter-btn" data-filter="defense">Defense</button>
-                <select class="state-filter" id="stateFilter">
-                    <option value="all">All States</option>
-                    <option value="All India">All India</option>
-                    <option value="Andhra Pradesh">Andhra Pradesh</option>
-                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-                    <option value="Assam">Assam</option>
-                    <option value="Bihar">Bihar</option>
-                    <option value="Chhattisgarh">Chhattisgarh</option>
-                    <option value="Goa">Goa</option>
-                    <option value="Gujarat">Gujarat</option>
-                    <option value="Haryana">Haryana</option>
-                    <option value="Himachal Pradesh">Himachal Pradesh</option>
-                    <option value="Jharkhand">Jharkhand</option>
-                    <option value="Karnataka">Karnataka</option>
-                    <option value="Kerala">Kerala</option>
-                    <option value="Madhya Pradesh">Madhya Pradesh</option>
-                    <option value="Maharashtra">Maharashtra</option>
-                    <option value="Manipur">Manipur</option>
-                    <option value="Meghalaya">Meghalaya</option>
-                    <option value="Mizoram">Mizoram</option>
-                    <option value="Nagaland">Nagaland</option>
-                    <option value="Odisha">Odisha</option>
-                    <option value="Punjab">Punjab</option>
-                    <option value="Rajasthan">Rajasthan</option>
-                    <option value="Sikkim">Sikkim</option>
-                    <option value="Tamil Nadu">Tamil Nadu</option>
-                    <option value="Telangana">Telangana</option>
-                    <option value="Tripura">Tripura</option>
-                    <option value="Uttar Pradesh">Uttar Pradesh</option>
-                    <option value="Uttarakhand">Uttarakhand</option>
-                    <option value="West Bengal">West Bengal</option>
-                    <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
-                    <option value="Chandigarh">Chandigarh</option>
-                    <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
-                    <option value="Delhi">Delhi</option>
-                    <option value="Jammu and Kashmir">Jammu and Kashmir</option>
-                    <option value="Ladakh">Ladakh</option>
-                    <option value="Lakshadweep">Lakshadweep</option>
-                    <option value="Puducherry">Puducherry</option>
-                </select>
-                <select class="education-filter" id="educationFilter">
-                    <option value="all">All Education Levels</option>
-                    <option value="10th Pass">10th Pass</option>
-                    <option value="12th Pass">12th Pass</option>
-                    <option value="Graduate">Graduate</option>
-                    <option value="Post Graduate">Post Graduate</option>
-                </select>
-            </div>
-            <div class="job-cards" id="jobCards">
-                <!-- Job cards will be dynamically inserted here by JavaScript -->
-            </div>
-        </section>
+        <!-- Main Content -->
+        <main>
+            <!-- Job Listings Section -->
+            <section class="job-listings" id="jobs">
+                <div class="section-title">
+                    <h2>Latest Government Jobs</h2>
+                </div>
+                <div class="job-filters">
+                    <input type="text" class="search-bar" id="searchBar" placeholder="Search jobs by keyword..." aria-label="Search jobs">
+                    <button class="filter-btn active" data-filter="all">All Jobs</button>
+                    <button class="filter-btn" data-filter="central">Central Govt</button>
+                    <button class="filter-btn" data-filter="state">State Govt</button>
+                    <button class="filter-btn" data-filter="banking">Banking</button>
+                    <button class="filter-btn" data-filter="railway">Railway</button>
+                    <button class="filter-btn" data-filter="defense">Defense</button>
+                    <select class="state-filter" id="stateFilter" aria-label="Filter by state">
+                        <option value="all">All States</option>
+                        <option value="All India">All India</option>
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                        <option value="Assam">Assam</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Chhattisgarh">Chhattisgarh</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option value="Jharkhand">Jharkhand</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Manipur">Manipur</option>
+                        <option value="Meghalaya">Meghalaya</option>
+                        <option value="Mizoram">Mizoram</option>
+                        <option value="Nagaland">Nagaland</option>
+                        <option value="Odisha">Odisha</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Telangana">Telangana</option>
+                        <option value="Tripura">Tripura</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="Uttarakhand">Uttarakhand</option>
+                        <option value="West Bengal">West Bengal</option>
+                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                        <option value="Chandigarh">Chandigarh</option>
+                        <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                        <option value="Ladakh">Ladakh</option>
+                        <option value="Lakshadweep">Lakshadweep</option>
+                        <option value="Puducherry">Puducherry</option>
+                    </select>
+                    <select class="education-filter" id="educationFilter" aria-label="Filter by education">
+                        <option value="all">All Education Levels</option>
+                        <option value="10th Pass">10th Pass</option>
+                        <option value="12th Pass">12th Pass</option>
+                        <option value="Graduate">Graduate</option>
+                        <option value="Post Graduate">Post Graduate</option>
+                    </select>
+                </div>
+                <div class="job-cards" id="jobCards">
+                    <!-- Job cards will be dynamically inserted here by JavaScript -->
+                </div>
+            </section>
 
-        <!-- Notifications Section -->
-        <section class="main-content notifications" id="notifications">
-            <div class="section-title">
-                <h2>Notifications</h2>
-            </div>
-            <div class="notification-cards" id="notificationCards">
-                <!-- Notification cards will be dynamically inserted here -->
-            </div>
-        </section>
+            <!-- Notifications Section -->
+            <section class="notifications" id="notifications">
+                <div class="section-title">
+                    <h2>Notifications</h2>
+                </div>
+                <div class="notification-cards" id="notificationCards">
+                    <!-- Notification cards will be dynamically inserted here -->
+                </div>
+            </section>
 
-        <!-- Latest Announcements Section -->
-        <section class="main-content announcements" id="announcements">
-            <div class="section-title">
-                <h2>Latest Announcements</h2>
-            </div>
-            <div class="announcement-cards" id="announcementCards">
-                <!-- Announcement cards will be dynamically inserted here -->
-            </div>
-        </section>
+            <!-- Latest Announcements Section -->
+            <section class="announcements" id="announcements">
+                <div class="section-title">
+                    <h2>Latest Announcements</h2>
+                </div>
+                <div class="announcement-cards" id="announcementCards">
+                    <!-- Announcement cards will be dynamically inserted here -->
+                </div>
+            </section>
 
-        <!-- Others Section -->
-        <section class="main-content others" id="others">
-            <div class="section-title">
-                <h2>Others</h2>
-            </div>
-            <div class="other-cards" id="otherCards">
-                <!-- Other cards will be dynamically inserted here -->
-            </div>
-        </section>
+            <!-- Others Section -->
+            <section class="others" id="others">
+                <div class="section-title">
+                    <h2>Others</h2>
+                </div>
+                <div class="other-cards" id="otherCards">
+                    <!-- Other cards will be dynamically inserted here -->
+                </div>
+            </section>
 
-        <!-- New Updates Section -->
-        <section class="main-content updates" id="updates">
-            <div class="section-title">
-                <h2>New Updates</h2>
-            </div>
-            <div class="update-cards" id="updateCards">
-                <!-- Update cards will be dynamically inserted here -->
-            </div>
-        </section>
+            <!-- New Updates Section -->
+            <section class="updates" id="updates">
+                <div class="section-title">
+                    <h2>New Updates</h2>
+                </div>
+                <div class="update-cards" id="updateCards">
+                    <!-- Update cards will be dynamically inserted here -->
+                </div>
+            </section>
 
-        <!-- Jobs by Education Section -->
-        <section class="main-content education-jobs" id="education-jobs">
-            <div class="section-title">
-                <h2>Jobs by Education</h2>
-            </div>
-            <div class="education-job-cards" id="educationJobCards">
-                <!-- Education job cards will be dynamically inserted here -->
-            </div>
-        </section>
+            <!-- Jobs by Education Section -->
+            <section class="education-jobs" id="education-jobs">
+                <div class="section-title">
+                    <h2>Jobs by Education</h2>
+                </div>
+                <div class="education-job-cards" id="educationJobCards">
+                    <!-- Education job cards will be dynamically inserted here -->
+                </div>
+            </section>
+        </main>
     </div>
 
     <!-- Hero Section -->
@@ -732,7 +803,7 @@
             <h1>Free Government Job Alerts</h1>
             <p>Subscribe to receive daily job notifications for State and Central Government jobs directly to your email.</p>
             <form class="newsletter-form" id="newsletterForm">
-                <input type="email" placeholder="Your email address" required>
+                <input type="email" placeholder="Your email address" required aria-label="Email for subscription">
                 <button type="submit">Subscribe</button>
             </form>
         </div>
@@ -761,8 +832,8 @@
                 <div class="footer-column">
                     <h3>Contact Us</h3>
                     <ul class="footer-links">
-                        <li><i class="fas fa-envelope"></i> support@jobalert.example</li>
-                        <li><i class="fas fa-phone"></i> +91 9876543210</li>
+                        <li><i class="fas fa-envelope" aria-label="Email"></i> support@jobalert.example</li>
+                        <li><i class="fas fa-phone" aria-label="Phone"></i> +91 9876543210</li>
                     </ul>
                 </div>
             </div>
@@ -775,11 +846,11 @@
     <!-- Login Modal -->
     <div class="modal" id="loginModal">
         <div class="modal-content">
-            <button class="close-modal" id="closeLoginModal">×</button>
+            <button class="close-modal" id="closeLoginModal" aria-label="Close login modal">×</button>
             <h2>Login to Your Account</h2>
             <form id="loginForm">
-                <input type="email" placeholder="Email Address" required>
-                <input type="password" placeholder="Password" required>
+                <input type="email" placeholder="Email Address" required aria-label="Email">
+                <input type="password" placeholder="Password" required aria-label="Password">
                 <button type="submit">Login</button>
             </form>
             <p style="text-align: center; margin-top: 10px;">Don't have an account? <a href="#" id="showRegisterModal">Register here</a></p>
@@ -789,13 +860,13 @@
     <!-- Register Modal -->
     <div class="modal" id="registerModal">
         <div class="modal-content">
-            <button class="close-modal" id="closeRegisterModal">×</button>
+            <button class="close-modal" id="closeRegisterModal" aria-label="Close register modal">×</button>
             <h2>Create Your Account</h2>
             <form id="registerForm">
-                <input type="text" placeholder="Full Name" required>
-                <input type="email" placeholder="Email Address" required>
-                <input type="password" placeholder="Password" required>
-                <select required>
+                <input type="text" placeholder="Full Name" required aria-label="Full Name">
+                <input type="email" placeholder="Email Address" required aria-label="Email">
+                <input type="password" placeholder="Password" required aria-label="Password">
+                <select required aria-label="Job Preference">
                     <option value="" disabled selected>Select Job Preference</option>
                     <option value="central">Central Government</option>
                     <option value="state">State Government</option>
@@ -811,12 +882,79 @@
 
     <!-- Alert Notification -->
     <div class="alert" id="alertNotification">
-        <i class="fas fa-check-circle"></i>
-        <span id="alertMessage">Success! You've subscribed to job alerts.</span>
+        <i class="fas fa-check-circle" aria-label="Success"></i>
+        <pre id="alertMessage">Success! You've subscribed to job alerts.</pre>
     </div>
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Job Alert",
+        "url": "https://jobalert.example",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://jobalert.example/?search={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "JobPosting",
+        "title": "SSC CGL 2025",
+        "description": "Combined Graduate Level Examination for various Group B and C posts in ministries and departments.",
+        "identifier": {
+            "@type": "PropertyValue",
+            "name": "SSC",
+            "value": "SSC-CGL-2025"
+        },
+        "datePosted": "2025-05-16",
+        "validThrough": "2025-06-15",
+        "employmentType": "FULL_TIME",
+        "hiringOrganization": {
+            "@type": "Organization",
+            "name": "Staff Selection Commission",
+            "sameAs": "https://ssc.nic.in"
+        },
+        "jobLocation": {
+            "@type": "Place",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Multiple Locations",
+                "addressRegion": "India",
+                "addressCountry": "IN"
+            }
+        },
+        "baseSalary": {
+            "@type": "MonetaryAmount",
+            "currency": "INR",
+            "value": {
+                "@type": "QuantitativeValue",
+                "minValue": 35400,
+                "maxValue": 112400,
+                "unitText": "MONTH"
+            }
+        },
+        "educationRequirements": {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "Bachelor’s degree"
+        },
+        "experienceRequirements": {
+            "@type": "OccupationalExperienceRequirements",
+            "monthsOfExperience": 0
+        }
+    }
+    </script>
 
     <!-- JavaScript -->
     <script>
+        // Mock database for subscribers and members
+        const subscribers = [];
+        const members = [];
+
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navLinks = document.getElementById('navLinks');
@@ -824,14 +962,15 @@
         mobileMenuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
-                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+                '<i class="fas fa-times" aria-label="Close Menu"></i>' : 
+                '<i class="fas fa-bars" aria-label="Open Menu"></i>';
         });
 
         // Close mobile menu when clicking on a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars" aria-label="Open Menu"></i>';
             });
         });
 
@@ -871,7 +1010,7 @@
             }
         });
 
-        // Form Submissions
+        // Form Submissions and Mock Email Notifications
         const newsletterForm = document.getElementById('newsletterForm');
         const loginForm = document.getElementById('loginForm');
         const registerForm = document.getElementById('registerForm');
@@ -881,16 +1020,43 @@
         function showAlert(message, type = 'success') {
             alertMessage.textContent = message;
             alertNotification.className = `alert ${type} show`;
+            window.alert(message); // Fallback alert for visibility
             setTimeout(() => {
                 alertNotification.classList.remove('show');
-            }, 3000);
+            }, 7000); // Increased to 7 seconds
         }
 
         newsletterForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const email = e.target.querySelector('input').value;
-            console.log('Subscribed email:', email);
-            showAlert('Success! You will now receive job alerts.');
+            
+            // Store subscriber data
+            subscribers.push({ email, date: new Date().toISOString() });
+            console.log('Subscribers:', subscribers);
+            
+            // Mock email notification for subscription
+            const emailContent = `Subject: Welcome to Job Alert Subscription!
+
+Dear Subscriber,
+
+Thank you for subscribing to Job Alert! You will now receive daily notifications for State and Central Government jobs directly to your email (${email}). Stay tuned for the latest job opportunities.
+
+Best regards,
+Job Alert Team
+support@jobalert.example`;
+
+            console.log('Mock Subscription Email:', emailContent);
+            showAlert(emailContent);
+
+            // Placeholder for backend email integration
+            /*
+            fetch('/api/send-email', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ to: email, subject: 'Welcome to Job Alert', body: emailContent })
+            }).then(response => console.log('Email sent:', response));
+            */
+
             e.target.reset();
         });
 
@@ -903,10 +1069,44 @@
 
         registerForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            showAlert('Registration successful! Check your email to verify.');
+            const name = e.target.querySelector('input[type="text"]').value;
+            const email = e.target.querySelector('input[type="email"]').value;
+            const jobPreference = e.target.querySelector('select').value;
+            
+            // Store member data
+            members.push({ name, email, jobPreference, date: new Date().toISOString() });
+            console.log('Members:', members);
+            
+            // Mock email notification for registration
+            const emailContent = `Subject: Job Alert Registration Confirmation
+
+Dear ${name},
+
+Welcome to Job Alert! Your account has been successfully created with the email ${email}. You've selected "${jobPreference}" as your job preference. Please verify your email by clicking the link in the confirmation email (simulated).
+
+You'll receive regular updates on government job opportunities matching your preferences.
+
+Best regards,
+Job Alert Team
+support@jobalert.example`;
+
+            console.log('Mock Registration Email:', emailContent);
+            showAlert(emailContent);
+
+            // Placeholder for backend email integration
+            /*
+            fetch('/api/send-email', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ to: email, subject: 'Job Alert Registration Confirmation', body: emailContent })
+            }).then(response => console.log('Email sent:', response));
+            */
+
             registerModal.style.display = 'none';
             e.target.reset();
         });
+
+        // Note: For actual email sending, implement a backend API (e.g., Node.js with SendGrid or SMTP) to send emails to the user's provided email address.
 
         // Job Filtering
         const filterBtns = document.querySelectorAll('.filter-btn');
@@ -1170,7 +1370,7 @@
                 const jobCard = document.createElement('div');
                 jobCard.className = 'job-card';
                 jobCard.innerHTML = `
-                    <h3 class="job-title" data-job-id="${job.id}">${job.title} <i class="fas fa-chevron-down"></i></h3>
+                    <h3 class="job-title" data-job-id="${job.id}">${job.title} <i class="fas fa-chevron-down" aria-label="Toggle job details"></i></h3>
                     <div class="job-details">
                         <span><strong>Organization:</strong> ${job.organization}</span>
                         <span><strong>Location:</strong> ${job.location}</span>
