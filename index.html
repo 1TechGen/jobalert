@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="ok4EfF8CmwKWZpR-2PKSPSrOWmGO_qHsEqq4JFcUXDM" />
-    <meta name="google-adsense-account" content="ca-pub-1893797822419017">
+    <meta name="google-adsense-account" content="ca-pub-INSERT-YOUR-PUBLISHER-ID-HERE">
     <meta name="description" content="Get instant job alerts for State & Central Government jobs. Stay updated with daily job notifications and never miss an opportunity.">
     <meta name="keywords" content="job alert, government jobs, state jobs, central government jobs, job notifications, free job alerts">
     <meta name="robots" content="index, follow">
@@ -20,7 +20,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="canonical" href="https://jobalert.example">
     <link rel="icon" type="image/png" href="/favicon.png">
+    <!-- AdSense Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-INSERT-YOUR-PUBLISHER-ID-HERE" crossorigin="anonymous"></script>
+    <!-- SheetJS for XLSX handling (if needed) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <style>
         :root {
             --primary-color: #004d99;
@@ -267,7 +270,7 @@
 
         .filter-btn {
             padding: 8px 15px;
-           ológicas: var(--gray-color);
+            background-color: var(--gray-color);
             border: 1px solid var(--border-color);
             border-radius: var(--border-radius);
             cursor: pointer;
@@ -531,7 +534,7 @@
                     <i class="fas fa-bell"></i>
                     Job Alert
                 </a>
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle mobile menu">
                     <i class="fas fa-bars"></i>
                 </button>
                 <ul class="nav-links" id="navLinks">
@@ -569,19 +572,17 @@
                 <li><a href="#education-jobs">Jobs by Education</a></li>
                 <li><a href="https://education.jobalert.example" target="_blank" class="education-home">Click Here for Education Homepage</a></li>
             </ul>
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1893797822419017"
-     crossorigin="anonymous"></script>
-<!-- ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-1893797822419017"
-     data-ad-slot="3463848656"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-<script type='text/javascript' src='//pl26660027.profitableratecpm.com/55/86/d8/5586d8277572dfa22fa47331fc640734.js'></script>
+            <!-- Sidebar Ad -->
+            <div class="ad-space">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-INSERT-YOUR-PUBLISHER-ID-HERE"
+                     data-ad-slot="3463848656"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
             </div>
         </aside>
 
@@ -591,14 +592,14 @@
                 <h2>Latest Government Jobs</h2>
             </div>
             <div class="job-filters">
-                <input type="text" class="search-bar" id="searchBar" placeholder="Search jobs by keyword...">
-                <button class="filter-btn active" data-filter="all">All Jobs</button>
-                <button class="filter-btn" data-filter="central">Central Govt</button>
-                <button class="filter-btn" data-filter="state">State Govt</button>
-                <button class="filter-btn" data-filter="banking">Banking</button>
-                <button class="filter-btn" data-filter="railway">Railway</button>
-                <button class="filter-btn" data-filter="defense">Defense</button>
-                <select class="state-filter" id="stateFilter">
+                <input type="text" class="search-bar" id="searchBar" placeholder="Search jobs by keyword..." aria-label="Search jobs">
+                <button class="filter-btn active" data-filter="all" aria-label="Filter by all jobs">All Jobs</button>
+                <button class="filter-btn" data-filter="central" aria-label="Filter by central government jobs">Central Govt</button>
+                <button class="filter-btn" data-filter="state" aria-label="Filter by state government jobs">State Govt</button>
+                <button class="filter-btn" data-filter="banking" aria-label="Filter by banking jobs">Banking</button>
+                <button class="filter-btn" data-filter="railway" aria-label="Filter by railway jobs">Railway</button>
+                <button class="filter-btn" data-filter="defense" aria-label="Filter by defense jobs">Defense</button>
+                <select class="state-filter" id="stateFilter" aria-label="Filter by state">
                     <option value="all">All States</option>
                     <option value="All India">All India</option>
                     <option value="Andhra Pradesh">Andhra Pradesh</option>
@@ -638,7 +639,7 @@
                     <option value="Lakshadweep">Lakshadweep</option>
                     <option value="Puducherry">Puducherry</option>
                 </select>
-                <select class="education-filter" id="educationFilter">
+                <select class="education-filter" id="educationFilter" aria-label="Filter by education level">
                     <option value="all">All Education Levels</option>
                     <option value="10th Pass">10th Pass</option>
                     <option value="12th Pass">12th Pass</option>
@@ -646,18 +647,17 @@
                     <option value="Post Graduate">Post Graduate</option>
                 </select>
             </div>
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1893797822419017"
-     crossorigin="anonymous"></script>
-<!-- ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-1893797822419017"
-     data-ad-slot="3463848656"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+            <!-- Job Listings Ad -->
+            <div class="ad-space">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-INSERT-YOUR-PUBLISHER-ID-HERE"
+                     data-ad-slot="3463848656"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
             </div>
             <div class="job-cards" id="jobCards">
                 <!-- Job cards will be dynamically inserted here by JavaScript -->
@@ -720,16 +720,9 @@
                      data-ad-slot="EDUCATION-JOBS-AD-UNIT-ID"
                      data-ad-format="auto"
                      data-full-width-responsive="true"></ins>
-                <script type="text/javascript">
-	atOptions = {
-		'key' : '520c541f1969580c7f0b832549fbc046',
-		'format' : 'iframe',
-		'height' : 90,
-		'width' : 728,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/520c541f1969580c7f0b832549fbc046/invoke.js"></script>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
             </div>
         </section>
     </div>
@@ -740,7 +733,7 @@
             <h1>Free Government Job Alerts</h1>
             <p>Subscribe to receive daily job notifications for State and Central Government jobs directly to your email.</p>
             <form class="newsletter-form" id="newsletterForm">
-                <input type="email" placeholder="Your email address" required>
+                <input type="email" placeholder="Your email address" required aria-label="Email address">
                 <button type="submit">Subscribe</button>
             </form>
         </div>
@@ -777,20 +770,19 @@
             <div class="footer-bottom">
                 <p>© 2025 Job Alert. All Rights Reserved.</p>
             </div>
+            <!-- Footer Ad -->
+            <div class="ad-space">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-INSERT-YOUR-PUBLISHER-ID-HERE"
+                     data-ad-slot="5871645877"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
         </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1893797822419017"
-     crossorigin="anonymous"></script>
-<!-- ad2 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-1893797822419017"
-     data-ad-slot="5871645877"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-    </div>
     </footer>
 
     <!-- Alert Notification -->
@@ -831,38 +823,6 @@
 
     <!-- JavaScript -->
     <script>
-        // File handling functions (unchanged)
-        var gk_isXlsx = false;
-        var gk_xlsxFileLookup = {};
-        var gk_fileData = {};
-        function filledCell(cell) {
-            return cell !== '' && cell != null;
-        }
-        function loadFileData(filename) {
-            if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
-                try {
-                    var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
-                    var firstSheetName = workbook.SheetNames[0];
-                    var worksheet = workbook.Sheets[firstSheetName];
-                    var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
-                    var filteredData = jsonData.filter(row => row.some(filledCell));
-                    var headerRowIndex = filteredData.findIndex((row, index) =>
-                        row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
-                    );
-                    if (headerRowIndex === -1 || headerRowIndex > 25) {
-                        headerRowIndex = 0;
-                    }
-                    var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex));
-                    csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
-                    return csv;
-                } catch (e) {
-                    console.error(e);
-                    return "";
-                }
-            }
-            return gk_fileData[filename] || "";
-        }
-
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navLinks = document.getElementById('navLinks');
@@ -871,12 +831,14 @@
             navLinks.classList.toggle('active');
             mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
                 '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            mobileMenuBtn.setAttribute('aria-expanded', navLinks.classList.contains('active'));
         });
 
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
                 mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
             });
         });
 
@@ -914,7 +876,7 @@
         const educationJobCardsContainer = document.getElementById('educationJobCards');
         const sidebarLinks = document.querySelectorAll('.sidebar-links a[data-filter]');
 
-        // Sample data (unchanged)
+        // Sample data
         const jobs = [
             {
                 id: 1,
@@ -1365,21 +1327,8 @@
         renderUpdates();
         renderOthers();
         renderEducationJobs();
-
-        // Initialize AdSense
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1893797822419017"
-     crossorigin="anonymous"></script>
-<!-- ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-1893797822419017"
-     data-ad-slot="3463848656"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-    <script async="async" data-cfasync="false" src="//pl26660002.profitableratecpm.com/be003e884e9c85368e9e10557802dc6b/invoke.js"></script>
+    </script>
+	<script async="async" data-cfasync="false" src="//pl26660002.profitableratecpm.com/be003e884e9c85368e9e10557802dc6b/invoke.js"></script>
 <div id="container-be003e884e9c85368e9e10557802dc6b"></div>
 </body>
 </html>
