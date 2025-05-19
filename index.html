@@ -1165,6 +1165,45 @@
             });
         }
 
+
+	    <!-- Add this section where you want the job alerts to appear, e.g., below your newsletter or main content -->
+<section id="sarkari-jobs-section">
+  <h2>Latest Sarkari Naukari Jobs</h2>
+  <ul id="sarkari-jobs-list">
+    <li>Loading latest jobs...</li>
+  </ul>
+</section>
+
+<script>
+  // Replace with actual Sarkari Naukari RSS feed URL
+  const rssUrl = 'https://www.sarkariresult.com/rss.php';
+  const apiUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(rssUrl);
+
+  function fetchSarkariJobs() {
+    fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+        const jobsList = document.getElementById('sarkari-jobs-list');
+        jobsList.innerHTML = ''; // Clear existing jobs
+        if (data.items && data.items.length > 0) {
+          data.items.slice(0, 10).forEach(item => {
+            const li = document.createElement('li');
+            li.innerHTML = `<a href="${item.link}" target="_blank" rel="noopener">${item.title}</a>`;
+            jobsList.appendChild(li);
+          });
+        } else {
+          jobsList.innerHTML = '<li>No jobs found.</li>';
+        }
+      })
+      .catch(error => {
+        document.getElementById('sarkari-jobs-list').innerHTML = '<li>Could not load jobs.</li>';
+        console.error('Error fetching Sarkari Naukari RSS:', error);
+      });
+  }
+
+  // Fetch jobs on page load
+  fetchSarkariJobs();
+</script>
         // Render notifications
         function renderNotifications() {
             notificationCardsContainer.innerHTML = '';
