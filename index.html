@@ -10,20 +10,21 @@
     <meta name="robots" content="index, follow">
     <meta name="author" content="Job Alert Team">
     <meta name="theme-color" content="#004d99">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://pagead2.googlesyndication.com https://cdnjs.cloudflare.com https://pl26660002.profitableratecpm.com 'unsafe-inline'; style-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline'; img-src 'self' https://via.placeholder.com data:; connect-src 'self' https://api.rss2json.com; frame-src 'self' https://*.googlesyndication.com;">
     <meta property="og:title" content="Job Alert - Free Government Job Notifications">
     <meta property="og:description" content="Subscribe for daily government job alerts. Find opportunities in Central, State, Banking, Railway, and Defense sectors.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://jobalert.example">
-    <meta property="og:image" content="https://jobalert.example/og-image.jpg">
+    <meta property="og:url" content="https://www.jobalert.com">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630?text=Job+Alert">
     <meta property="og:site_name" content="Job Alert">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Job Alert - Free Government Job Notifications">
     <meta name="twitter:description" content="Subscribe for daily government job alerts. Find opportunities in Central, State, Banking, Railway, and Defense sectors.">
-    <meta name="twitter:image" content="https://jobalert.example/og-image.jpg">
+    <meta name="twitter:image" content="https://via.placeholder.com/1200x630?text=Job+Alert">
     <title>Job Alert - Free Government Job Notifications</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="canonical" href="https://jobalert.example">
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="canonical" href="https://www.jobalert.com">
+    <link rel="icon" type="image/png" href="https://via.placeholder.com/32?text=JA">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1893797822419017" crossorigin="anonymous"></script>
     <style>
         :root {
@@ -55,6 +56,7 @@
         img {
             max-width: 100%;
             height: auto;
+            loading: lazy;
         }
 
         .container {
@@ -154,20 +156,6 @@
             color: var(--primary-color);
         }
 
-        .sidebar-links .education-home {
-            display: inline-block;
-            padding: 8px 15px;
-            background-color: var(--success-color);
-            color: white;
-            border-radius: var(--border-radius);
-            font-weight: bold;
-        }
-
-        .sidebar-links .education-home:hover {
-            background-color: #218838;
-            color: white;
-        }
-
         .ad-space {
             margin: 20px 0;
             text-align: center;
@@ -204,13 +192,15 @@
 
         .hero .newsletter-form {
             display: flex;
-            justify-content: center;
-            gap: 10px;
-            max-width: 500px;
-            margin: 0 auto;
+            flex-direction: column;
         }
 
-        .hero input {
+        .hero .newsletter-form input,
+        .hero .newsletter-form button {
+            margin: 5px;
+        }
+
+        .hero .newsletter-form input {
             flex: 1;
             padding: 10px;
             border: 1px solid var(--border-color);
@@ -218,7 +208,7 @@
             font-size: 14px;
         }
 
-        .hero button {
+        .hero .newsletter-form button {
             padding: 10px 20px;
             background-color: var(--primary-color);
             color: white;
@@ -228,7 +218,7 @@
             font-size: 14px;
         }
 
-        .hero button:hover {
+        .hero .newsletter-form button:hover {
             background-color: var(--secondary-color);
         }
 
@@ -456,6 +446,10 @@
             transform: translateX(0);
         }
 
+        .alert.error {
+            background-color: #dc3545;
+        }
+
         .alert i {
             margin-right: 10px;
         }
@@ -469,6 +463,7 @@
                 width: 100%;
                 margin-right: 0;
                 margin-bottom: 20px;
+                padding: 15px;
             }
 
             .nav-links {
@@ -521,7 +516,7 @@
     <header>
         <div class="container">
             <nav class="navbar">
-                <a href="#" class="logo">
+                <a href="#" class="logo" aria-label="Job Alert Home">
                     <i class="fas fa-bell"></i>
                     Job Alert
                 </a>
@@ -529,13 +524,13 @@
                     <i class="fas fa-bars"></i>
                 </button>
                 <ul class="nav-links" id="navLinks" role="navigation">
-                    <li><a href="#home" aria-label="Home">Home</a></li>
-                    <li><a href="#jobs" aria-label="Latest Jobs">Latest Jobs</a></li>
-                    <li><a href="#notifications" aria-label="Notifications">Notifications</a></li>
-                    <li><a href="#announcements" aria-label="Announcements">Announcements</a></li>
-                    <li><a href="#updates" aria-label="New Updates">New Updates</a></li>
-                    <li><a href="#education-jobs" aria-label="Jobs by Education">Jobs by Education</a></li>
-                    <li><a href="#subscribe" aria-label="Subscribe">Subscribe</a></li>
+                    <li><a href="#home" aria-label="Go to Home">Home</a></li>
+                    <li><a href="#jobs" aria-label="Go to Latest Jobs">Latest Jobs</a></li>
+                    <li><a href="#notifications" aria-label="Go to Notifications">Notifications</a></li>
+                    <li><a href="#announcements" aria-label="Go to Announcements">Announcements</a></li>
+                    <li><a href="#updates" aria-label="Go to New Updates">New Updates</a></li>
+                    <li><a href="#education-jobs" aria-label="Go to Jobs by Education">Jobs by Education</a></li>
+                    <li><a href="#subscribe" aria-label="Go to Subscribe">Subscribe</a></li>
                 </ul>
             </nav>
         </div>
@@ -555,59 +550,47 @@
 
     <div class="container">
         <aside class="sidebar">
-            <h3>Job Categories</h3>
-            <ul class="sidebar-links">
-                <li><a href="#" data-filter="all" aria-label="All Jobs">All Jobs</a></li>
-                <li><a href="#" data-filter="central" aria-label="Central Government Jobs">Central Govt</a></li>
-                <li><a href="#" data-filter="state" aria-label="State Government Jobs">State Govt</a></li>
-                <li><a href="#" data-filter="banking" aria-label="Banking Jobs">Banking</a></li>
-                <li><a href="#" data-filter="railway" aria-label="Railway Jobs">Railway</a></li>
-                <li><a href="#" data-filter="defense" aria-label="Defense Jobs">Defense</a></li>
+            <h3 id="job-categories">Job Categories</h3>
+            <ul class="sidebar-links" aria-labelledby="job-categories">
+                <li><a href="#" data-filter="all" aria-label="View All Jobs">All Jobs</a></li>
+                <li><a href="#" data-filter="central" aria-label="View Central Government Jobs">Central Govt</a></li>
+                <li><a href="#" data-filter="state" aria-label="View State Government Jobs">State Govt</a></li>
+                <li><a href="#" data-filter="banking" aria-label="View Banking Jobs">Banking</a></li>
+                <li><a href="#" data-filter="railway" aria-label="View Railway Jobs">Railway</a></li>
+                <li><a href="#" data-filter="defense" aria-label="View Defense Jobs">Defense</a></li>
             </ul>
             <div class="bg-white rounded-lg shadow-md p-6">
                 <h3 class="text-lg font-bold text-blue-900 mb-4">Quick Links</h3>
                 <ul class="space-y-2">
-                    <li><a href="#notifications" class="text-blue-700 hover:text-blue-900 transition flex items-center">
+                    <li><a href="#notifications" class="text-blue-700 hover:text-blue-900 transition flex items-center" aria-label="Go to Notifications">
                         <i class="fas fa-bell mr-2"></i> Notifications
                     </a></li>
-                    <li><a href="#rss-feeds" class="text-blue-700 hover:text-blue-900 transition flex items-center">
+                    <li><a href="#rss-feeds" class="text-blue-700 hover:text-blue-900 transition flex items-center" aria-label="Go to RSS Feeds">
                         <i class="fas fa-rss mr-2"></i> RSS Feeds
                     </a></li>
-                    <li><a href="https://www.sarkarijobfind.com" target="_blank" class="text-blue-700 hover:text-blue-900 transition flex items-center">
+                    <li><a href="https://www.sarkarijobfind.com" target="_blank" rel="noopener" class="text-blue-700 hover:text-blue-900 transition flex items-center" aria-label="Visit SarkariJobFind">
                         <i class="fas fa-external-link-alt mr-2"></i> SarkariJobFind
                     </a></li>
-                    <li><a href="#subscribe" class="text-blue-700 hover:text-blue-900 transition flex items-center">
+                    <li><a href="#subscribe" class="text-blue-700 hover:text-blue-900 transition flex items-center" aria-label="Go to Subscribe">
                         <i class="fas fa-envelope mr-2"></i> Subscribe
                     </a></li>
                 </ul>
             </div>
-        	</ul>
-            <div class="ad-space">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-1893797822419017"
-                     data-ad-slot="3463848656"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </div>
         </aside>
 
-        <section class="main-content job-listings" id="jobs">
+        <section class="main-content job-listings" id="jobs" role="region" aria-labelledby="latest-jobs">
             <div class="section-title">
-                <h2>Latest Government Jobs</h2>
+                <h2 id="latest-jobs">Latest Government Jobs</h2>
             </div>
             <div class="job-filters">
-                <input type="text" class="search-bar" id="searchBar" placeholder="Search jobs by keyword..." aria-label="Search jobs">
-                <button class="filter-btn active" data-filter="all" aria-label="Filter by all jobs">All Jobs</button>
-                <button class="filter-btn" data-filter="central" aria-label="Filter by central government jobs">Central Govt</button>
-                <button class="filter-btn" data-filter="state" aria-label="Filter by state government jobs">State Govt</button>
-                <button class="filter-btn" data-filter="banking" aria-label="Filter by banking jobs">Banking</button>
-                <button class="filter-btn" data-filter="railway" aria-label="Filter by railway jobs">Railway</button>
-                <button class="filter-btn" data-filter="defense" aria-label="Filter by defense jobs">Defense</button>
-                <select class="state-filter" id="stateFilter" aria-label="Filter by state">
+                <input type="text" class="search-bar" id="searchBar" placeholder="Search jobs by keyword..." aria-label="Search jobs by keyword">
+                <button class="filter-btn active" data-filter="all" aria-label="Show all jobs" role="button">All Jobs</button>
+                <button class="filter-btn" data-filter="central" aria-label="Show central government jobs" role="button">Central Govt</button>
+                <button class="filter-btn" data-filter="state" aria-label="Show state government jobs" role="button">State Govt</button>
+                <button class="filter-btn" data-filter="banking" aria-label="Show banking jobs" role="button">Banking</button>
+                <button class="filter-btn" data-filter="railway" aria-label="Show railway jobs" role="button">Railway</button>
+                <button class="filter-btn" data-filter="defense" aria-label="Show defense jobs" role="button">Defense</button>
+                <select class="state-filter" id="stateFilter" aria-label="Filter jobs by state">
                     <option value="all">All States</option>
                     <option value="All India">All India</option>
                     <option value="Andhra Pradesh">Andhra Pradesh</option>
@@ -647,7 +630,7 @@
                     <option value="Lakshadweep">Lakshadweep</option>
                     <option value="Puducherry">Puducherry</option>
                 </select>
-                <select class="education-filter" id="educationFilter" aria-label="Filter by education level">
+                <select class="education-filter" id="educationFilter" aria-label="Filter jobs by education level">
                     <option value="all">All Education Levels</option>
                     <option value="10th Pass">10th Pass</option>
                     <option value="12th Pass">12th Pass</option>
@@ -658,121 +641,107 @@
             <div class="job-cards" id="jobCards"></div>
         </section>
 
-        <section id="sarkari-jobs-section" class="main-content">
+        <section id="sarkari-jobs-section" class="main-content" role="region" aria-labelledby="sarkari-jobs">
             <div class="section-title">
-                <h2>Latest Sarkari Naukari Jobs</h2>
+                <h2 id="sarkari-jobs">Latest Sarkari Naukari Jobs</h2>
             </div>
             <ul id="sarkari-jobs-list">
                 <li>Loading latest jobs...</li>
             </ul>
         </section>
 
-        <div class="ad-space">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1893797822419017"
-                 data-ad-slot="5871645877"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
-
-        <section class="main-content notifications" id="notifications">
+        <section class="main-content notifications" id="notifications" role="region" aria-labelledby="notifications-title">
             <div class="section-title">
-                <h2>Notifications</h2>
+                <h2 id="notifications-title">Notifications</h2>
             </div>
             <div class="notification-cards" id="notificationCards"></div>
         </section>
 
-	     <!-- RSS Feeds Section -->
-            <section id="rss-feeds" class="mb-12">
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <div class="bg-blue-900 text-white px-6 py-4">
-                        <h2 class="text-xl font-bold flex items-center">
-                            <i class="fas fa-rss mr-2"></i> RSS Job Feeds
-                        </h2>
-                    </div>
-                    
-                    <div class="p-6">
-                        <div class="mb-6 rss-feed-selector p-4 rounded-lg">
-                            <div class="flex items-center mb-3">
-                                <i class="fas fa-link mr-2 text-blue-700"></i>
-                                <h3 class="font-bold text-blue-900">Select RSS Feed Source</h3>
-                            </div>
-                            <div class="flex flex-col sm:flex-row gap-3">
-                                <select id="rssFeedSelector" class="flex-grow px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                    <option value="https://www.sarkarijobfind.com/feed">SarkariJobFind.com</option>
-                                    <option value="https://www.sarkariresult.com/rss/latest.xml">SarkariResult.com</option>
-                                    <option value="https://www.freejobalert.com/rss/latest.xml">FreeJobAlert.com</option>
-                                    <option value="https://www.sarkariexam.com/rss/latest.xml">SarkariExam.com</option>
-                                    <option value="custom">Custom RSS Feed</option>
-                                </select>
-                                <input type="text" id="customRssUrl" placeholder="Enter custom RSS URL" 
-                                    class="hidden px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                <button id="loadRssBtn" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition">
-                                    Load Feed
-                                </button>
-                            </div>
+        <section id="rss-feeds" class="mb-12" role="region" aria-labelledby="rss-feeds-title">
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="bg-blue-900 text-white px-6 py-4">
+                    <h2 class="text-xl font-bold flex items-center" id="rss-feeds-title">
+                        <i class="fas fa-rss mr-2"></i> RSS Job Feeds
+                    </h2>
+                </div>
+                <div class="p-6">
+                    <div class="mb-6 rss-feed-selector p-4 rounded-lg">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-link mr-2 text-blue-700"></i>
+                            <h3 class="font-bold text-blue-900">Select RSS Feed Source</h3>
                         </div>
-                        
-                        <div id="rssFeedContent" class="border rounded-lg overflow-hidden">
-                            <div class="bg-gray-100 px-4 py-3 border-b flex justify-between items-center">
-                                <h3 class="font-bold text-blue-900">Feed Content</h3>
-                                <span id="rssFeedTitle" class="text-sm text-gray-600"></span>
-                            </div>
-                            <div id="rssFeedItems" class="divide-y">
-                                <div class="p-4 text-center text-gray-500">
-                                    <i class="fas fa-rss-square text-3xl mb-2 text-blue-400"></i>
-                                    <p>Select an RSS feed source to load job listings</p>
-                                </div>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <select id="rssFeedSelector" class="flex-grow px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Select RSS feed source">
+                                <option value="https://www.sarkarijobfind.com/feed">SarkariJobFind.com</option>
+                                <option value="https://www.sarkariresult.com/rss/latest.xml">SarkariResult.com</option>
+                                <option value="https://www.freejobalert.com/rss/latest.xml">FreeJobAlert.com</option>
+                                <option value="https://www.sarkariexam.com/rss/latest.xml">SarkariExam.com</option>
+                                <option value="custom">Custom RSS Feed</option>
+                            </select>
+                            <input type="text" id="customRssUrl" placeholder="Enter custom RSS URL" class="hidden px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Enter custom RSS URL">
+                            <button id="loadRssBtn" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition" aria-label="Load selected RSS feed">Load Feed</button>
+                        </div>
+                    </div>
+                    <div id="rssFeedContent" class="border rounded-lg overflow-hidden">
+                        <div class="bg-gray-100 px-4 py-3 border-b flex justify-between items-center">
+                            <h3 class="font-bold text-blue-900">Feed Content</h3>
+                            <span id="rssFeedTitle" class="text-sm text-gray-600"></span>
+                        </div>
+                        <div id="rssFeedItems" class="divide-y">
+                            <div class="p-4 text-center text-gray-500">
+                                <i class="fas fa-rss-square text-3xl mb-2 text-blue-400"></i>
+                                <p>Select an RSS feed source to load job listings</p>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-        <section class="main-content announcements" id="announcements">
+        <section class="main-content announcements" id="announcements" role="region" aria-labelledby="announcements-title">
             <div class="section-title">
-                <h2>Latest Announcements</h2>
+                <h2 id="announcements-title">Latest Announcements</h2>
             </div>
             <div class="announcement-cards" id="announcementCards"></div>
         </section>
 
-        <section class="main-content others" id="others">
+        <section class="main-content others" id="others" role="region" aria-labelledby="others-title">
             <div class="section-title">
-                <h2>Others</h2>
+                <h2 id="others-title">Others</h2>
             </div>
             <div class="other-cards" id="otherCards"></div>
         </section>
 
-        <section class="main-content updates" id="updates">
+        <section class="main-content updates" id="updates" role="region" aria-labelledby="updates-title">
             <div class="section-title">
-                <h2>New Updates</h2>
+                <h2 id="updates-title">New Updates</h2>
             </div>
             <div class="update-cards" id="updateCards"></div>
         </section>
 
-        <section class="main-content education-jobs" id="education-jobs">
+        <section class="main-content education-jobs" id="education-jobs" role="region" aria-labelledby="education-jobs-title">
             <div class="section-title">
-                <h2>Jobs by Education</h2>
+                <h2 id="education-jobs-title">Jobs by Education</h2>
             </div>
             <div class="education-job-cards" id="educationJobCards"></div>
         </section>
     </div>
 
-    <section class="hero" id="home">
+    <section class="hero" id="home" role="region" aria-labelledby="hero-title">
         <div class="container">
-            <h1>Free Government Job Alerts</h1>
+            <h1 id="hero-title">Free Government Job Alerts</h1>
             <p>Subscribe to receive daily job notifications for State and Central Government jobs directly to your email.</p>
             <form class="newsletter-form" id="newsletterForm">
-                <input type="email" placeholder="Your email address" required aria-label="Email address">
-                <button type="submit" aria-label="Subscribe to newsletter">Subscribe</button>
+                <input type="email" placeholder="Your email address" required aria-label="Enter your email address for newsletter">
+                <button type="submit" aria-label="Subscribe to job alerts newsletter">Subscribe</button>
             </form>
+            <button id="enableNotifications" class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700" aria-label="Enable push notifications for job alerts">
+                Enable Push Notifications
+            </button>
         </div>
     </section>
 
-    <footer>
+    <footer role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
@@ -782,19 +751,19 @@
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="#home" aria-label="Home">Home</a></li>
-                        <li><a href="#jobs" aria-label="Latest Jobs">Latest Jobs</a></li>
-                        <li><a href="#notifications" aria-label="Notifications">Notifications</a></li>
-                        <li><a href="#announcements" aria-label="Announcements">Announcements</a></li>
-                        <li><a href="#updates" aria-label="New Updates">New Updates</a></li>
-                        <li><a href="#education-jobs" aria-label="Jobs by Education">Jobs by Education</a></li>
-                        <li><a href="#subscribe" aria-label="Subscribe">Subscribe</a></li>
+                        <li><a href="#home" aria-label="Go to Home">Home</a></li>
+                        <li><a href="#jobs" aria-label="Go to Latest Jobs">Latest Jobs</a></li>
+                        <li><a href="#notifications" aria-label="Go to Notifications">Notifications</a></li>
+                        <li><a href="#announcements" aria-label="Go to Announcements">Announcements</a></li>
+                        <li><a href="#updates" aria-label="Go to New Updates">New Updates</a></li>
+                        <li><a href="#education-jobs" aria-label="Go to Jobs by Education">Jobs by Education</a></li>
+                        <li><a href="#subscribe" aria-label="Go to Subscribe">Subscribe</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Contact Us</h3>
                     <ul class="footer-links">
-                        <li><i class="fas fa-envelope"></i> support@jobalert.example</li>
+                        <li><i class="fas fa-envelope"></i> support@jobalert.com</li>
                         <li><i class="fas fa-phone"></i> +91 9876543210</li>
                     </ul>
                 </div>
@@ -802,14 +771,6 @@
             <div class="footer-bottom">
                 <p>© 2025 Job Alert. All Rights Reserved.</p>
             </div>
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-format="autorelaxed"
-                 data-ad-client="ca-pub-1893797822419017"
-                 data-ad-slot="1947754873"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
         </div>
     </footer>
 
@@ -823,11 +784,11 @@
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "Job Alert",
-        "url": "https://jobalert.example",
+        "url": "https://www.jobalert.com",
         "potentialAction": {
             "@type": "SearchAction",
-            "target": "https://jobalert.example/#jobs?search={search_term_string}",
-            "query-input": "required name=search_term_string"
+            "target": "https://www.jobalert.com/#jobs?search={search_term_string}",
+            "query-input": "required name=searchテンンプレート_term_string"
         }
     }
     </script>
@@ -836,18 +797,163 @@
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Job Alert",
-        "url": "https://jobalert.example",
-        "logo": "https://jobalert.example/logo.png",
+        "url": "https://www.jobalert.com",
+        "logo": "https://via.placeholder.com/150?text=JA",
         "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "+91-9876543210",
             "contactType": "customer service",
-            "email": "support@jobalert.example"
+            "email": "support@jobalert.com"
         }
     }
     </script>
 
     <script>
+        // Service Worker Registration
+        const swContent = `
+            const CACHE_NAME = 'job-alert-v1';
+            const urlsToCache = [
+                '/',
+                '/index.html',
+                'https://via.placeholder.com/32?text=JA',
+                'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'
+            ];
+
+            self.addEventListener('install', (event) => {
+                event.waitUntil(
+                    caches.open(CACHE_NAME).then((cache) => {
+                        return cache.addAll(urlsToCache);
+                    }).then(() => self.skipWaiting())
+                );
+            });
+
+            self.addEventListener('activate', (event) => {
+                event.waitUntil(
+                    self.clients.claim()
+                );
+            });
+
+            self.addEventListener('fetch', (event) => {
+                event.respondWith(
+                    caches.match(event.request).then((response) => {
+                        return response || fetch(event.request);
+                    })
+                );
+            });
+
+            self.addEventListener('push', (event) => {
+                const data = event.data ? event.data.json() : { title: 'Job Alert', body: 'New job opportunities available!' };
+                event.waitUntil(
+                    self.registration.showNotification(data.title, {
+                        body: data.body,
+                        icon: 'https://via.placeholder.com/32?text=JA',
+                        data: { url: data.url || 'https://www.jobalert.com' }
+                    })
+                );
+            });
+
+            self.addEventListener('notificationclick', (event) => {
+                event.notification.close();
+                event.waitUntil(
+                    clients.openWindow(event.notification.data.url)
+                );
+            });
+        `;
+
+        const swBlob = new Blob([swContent], { type: 'application/javascript' });
+        const swUrl = URL.createObjectURL(swBlob);
+
+        if ('serviceWorker' in navigator && 'PushManager' in window) {
+            navigator.serviceWorker.register(swUrl).then(registration => {
+                console.log('Service Worker registered:', registration);
+            }).catch(error => {
+                console.error('Service Worker registration failed:', error);
+            });
+        }
+
+        // VAPID Public Key
+        const vapidPublicKey = 'BAz55DhvYTuB0a3EBHkMJssomGNSEX6rxwgnzxDvhN9dSzuMOPz_PaXSADJU6Qn3tUQ3ZLOBqjRPDVuLrVofVSM';
+
+        // Utility to convert base64 to Uint8Array
+        function urlBase64ToUint8Array(base64String) {
+            try {
+                const padding = '='.repeat((4 - base64String.length % 4) % 4);
+                const base64 = (base64String + padding).replace(/-/g, '+').replace(/_/g, '/');
+                const rawData = window.atob(base64);
+                const outputArray = new Uint8Array(rawData.length);
+                for (let i = 0; i < rawData.length; ++i) {
+                    outputArray[i] = rawData.charCodeAt(i);
+                }
+                return outputArray;
+            } catch (error) {
+                console.error('Error converting base64 to Uint8Array:', error);
+                return null;
+            }
+        }
+
+        // Handle Push Notification Subscription
+        const enableNotificationsBtn = document.getElementById('enableNotifications');
+        if ('Notification' in window && enableNotificationsBtn) {
+            enableNotificationsBtn.addEventListener('click', () => {
+                if (Notification.permission === 'granted') {
+                    subscribeToPush();
+                } else {
+                    Notification.requestPermission().then(permission => {
+                        if (permission === 'granted') {
+                            subscribeToPush();
+                        } else {
+                            showAlert('Notification permission denied.', 'error');
+                        }
+                    });
+                }
+            });
+        } else {
+            enableNotificationsBtn.disabled = true;
+            enableNotificationsBtn.textContent = 'Notifications Not Supported';
+        }
+
+        function subscribeToPush() {
+            navigator.serviceWorker.ready.then(registration => {
+                registration.pushManager.subscribe({
+                    userVisibleOnly: true,
+                    applicationServerKey: urlBase64ToUint8Array(vapidPublicKey)
+                }).then(subscription => {
+                    // Mock API call for subscription (replace with actual endpoint)
+                    return fetch('https://www.jobalert.com/api/subscribe', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(subscription)
+                    }).then(response => ({ response, subscription }));
+                }).then(({ response, subscription }) => {
+                    if (response.ok) {
+                        showAlert('Successfully subscribed to push notifications!');
+                        enableNotificationsBtn.disabled = true;
+                        enableNotificationsBtn.textContent = 'Notifications Enabled';
+                    } else {
+                        throw new Error('Subscription failed');
+                    }
+                }).catch(error => {
+                    console.error('Error subscribing:', error);
+                    showAlert('Failed to subscribe to push notifications.', 'error');
+                });
+            });
+        }
+
+        // Note: Server-side web-push implementation should be handled separately
+        /*
+        const webPush = require('web-push');
+        webPush.setVapidDetails(
+            'mailto:support@jobalert.com',
+            'BAz55DhvYTuB0a3EBHkMJssomGNSEX6rxwgnzxDvhN9dSzuMOPz_PaXSADJU6Qn3tUQ3ZLOBqjRPDVuLrVofVSM',
+            'xM2yHO_PBNjK8vLQCJ5SZ5fI45xj_LrHwoHgAfZKtVw'
+        );
+        webPush.sendNotification(subscription, JSON.stringify({
+            title: 'New Job Alert',
+            body: 'Check out the latest government job openings!',
+            url: 'https://www.jobalert.com/#jobs'
+        }));
+        */
+
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navLinks = document.getElementById('navLinks');
@@ -884,10 +990,15 @@
 
         newsletterForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            const email = e.target.querySelector('input').value;
+            const emailInput = e.target.querySelector('input');
+            const email = emailInput.value.trim();
+            if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+                showAlert('Please enter a valid email address.', 'error');
+                return;
+            }
             try {
-                // Replace with actual API call to subscribe
-                console.log('Subscribed email:', email);
+                // Mock API call (replace with actual endpoint)
+                await new Promise(resolve => setTimeout(resolve, 500));
                 showAlert('Success! You will now receive job alerts.');
                 e.target.reset();
             } catch (error) {
@@ -908,7 +1019,7 @@
         const educationJobCardsContainer = document.getElementById('educationJobCards');
         const sidebarLinks = document.querySelectorAll('.sidebar-links a[data-filter]');
 
-        // Sample data (replace with API calls in production)
+        // Sample job data
         const jobs = [
             {
                 id: 1,
@@ -923,7 +1034,7 @@
                 posted: 'Today',
                 link: 'https://ssc.nic.in',
                 details: {
-                    description: 'Combined Graduate Level Examination for various Group B and C posts in ministries and departments.',
+                    description: 'Combined Graduate Level Examination for various Group B and C posts.',
                     eligibility: 'Bachelor’s degree from a recognized university. Age: 20-30 years.',
                     salary: 'INR 35,400 - 1,12,400 per month (Level 6).',
                     applicationProcess: 'Apply online through SSC official website. Application fee: INR 100.'
@@ -981,7 +1092,7 @@
                 link: 'https://www.mahapolice.gov.in/police-recru.php',
                 details: {
                     description: 'Constable positions in Maharashtra Police for law enforcement duties.',
-                    eligibility: '12th pass from a recognized board. Age: 19-28 years.',
+                    eligibitility: '12th pass from a recognized board. Age: 19-28 years.',
                     salary: 'INR 21,700 - 69,100 per month.',
                     applicationProcess: 'Online application via Maharashtra Police website. Fee: INR 450.'
                 }
@@ -1057,7 +1168,7 @@
                 link: 'https://tnpsc.gov.in',
                 details: {
                     description: 'Clerical positions in Tamil Nadu state government offices.',
-                    eligibility: 'Any graduate degree. Age: 18-30 years.',
+                    eligibility: 'Any graduate degree. Age:18-30 years.',
                     salary: 'INR 19,500 - 62,000 per month.',
                     applicationProcess: 'Apply online at TNPSC portal. Fee: INR 150.'
                 }
@@ -1065,68 +1176,40 @@
         ];
 
         const notifications = [
-            {
-                id: 1,
-                title: 'SSC CGL 2025 Notification Released',
-                date: '16-05-2025',
-                link: 'https://ssc.nic.in'
-            },
-            {
-                id: 2,
-                title: 'SBI PO Application Window Open',
-                date: '15-05-2025',
-                link: 'https://sbi.co.in'
-            }
+            { id: 1, title: 'SSC CGL 2025 Notification Released', date: '16-05-2025', link: 'https://ssc.nic.in' },
+            { id: 2, title: 'SBI PO Application Window Open', date: '15-05-2025', link: 'https://sbi.co.in' }
         ];
 
         const announcements = [
-            {
-                id: 1,
-                title: 'UPSC Exam Date Change',
-                description: 'UPSC Civil Services Prelims rescheduled to 15-07-2025.',
-                date: '14-05-2025',
-                link: 'https://upsc.gov.in'
-            },
-            {
-                id: 2,
-                title: 'New Recruitment Policy',
-                description: 'Government announces revised recruitment guidelines.',
-                date: '13-05-2025',
-                link: '#'
-            }
+            { id: 1, title: 'UPSC Exam Date Change', description: 'UPSC Civil Services Prelims rescheduled to 15-07-2025.', date: '14-05-2025', link: 'https://upsc.gov.in' },
+            { id: 2, title: 'New Recruitment Policy', description: 'Government announces revised recruitment guidelines.', date: '13-05-2025', link: '#' }
         ];
 
         const updates = [
-            {
-                id: 1,
-                title: 'RRB Technician Deadline Extended',
-                description: 'Application deadline extended to 25-06-2025.',
-                date: '16-05-2025',
-                link: 'https://indianrailways.gov.in'
-            },
-            {
-                id: 2,
-                title: 'Maharashtra Police Vacancies Increased',
-                description: 'Vacancies increased to 2500 for constable posts.',
-                date: '15-05-2025',
-                link: 'https://mahapolice.gov.in'
-            }
+            { id: 1, title: 'RRB Technician Deadline Extended', description: 'Application deadline extended to 25-06-2025.', date: '16-05-2025', link: 'https://indianrailways.gov.in' },
+            { id: 2, title: 'Maharashtra Police Vacancies Increased', description: 'Vacancies increased to 2500 for constable posts.', date: '15-05-2025', link: 'https://mahapolice.gov.in' }
         ];
 
         const others = [
-            {
-                id: 1,
-                title: 'How to Apply for Government Jobs',
-                description: 'A step-by-step guide to applying for government jobs.',
-                link: '#'
-            },
-            {
-                id: 2,
-                title: 'FAQs on Job Applications',
-                description: 'Common questions about government job applications.',
-                link: '#'
-            }
+            { id: 1, title: 'How to Apply for Government Jobs', description: 'A step-by-step guide to applying for government jobs.', link: '#' },
+            { id: 2, title: 'FAQs on Job Applications', description: 'Common questions about government job applications.', link: '#' }
         ];
+
+        // Debounce function for search input
+        function debounce(fn, delay) {
+            let timeout;
+            return (...args) => {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => fn(...args), delay);
+            };
+        }
+
+        // Input sanitization
+        function sanitizeInput(input) {
+            const div = document.createElement('div');
+            div.textContent = input;
+            return div.innerHTML;
+        }
 
         function renderJobs(typeFilter = 'all', stateFilterValue = 'all', educationFilterValue = 'all', searchQuery = '') {
             jobCardsContainer.innerHTML = '';
@@ -1145,7 +1228,7 @@
             }
 
             if (searchQuery) {
-                const query = searchQuery.toLowerCase();
+                const query = sanitizeInput(searchQuery).toLowerCase();
                 filteredJobs = filteredJobs.filter(job => 
                     job.title.toLowerCase().includes(query) || 
                     job.organization.toLowerCase().includes(query)
@@ -1161,22 +1244,22 @@
                 const jobCard = document.createElement('div');
                 jobCard.className = 'job-card';
                 jobCard.innerHTML = `
-                    <h3 class="job-title" data-job-id="${job.id}" role="button" aria-expanded="false" tabindex="0">${job.title} <i class="fas fa-chevron-down"></i></h3>
+                    <h3 class="job-title" data-job-id="${job.id}" role="button" aria-expanded="false" tabindex="0" aria-label="Toggle details for ${job.title}">${sanitizeInput(job.title)} <i class="fas fa-chevron-down"></i></h3>
                     <div class="job-details">
-                        <span><strong>Organization:</strong> ${job.organization}</span>
-                        <span><strong>Location:</strong> ${job.location}</span>
-                        <span><strong>Education:</strong> ${job.education}</span>
-                        <span><strong>Vacancies:</strong> ${job.vacancies}</span>
-                        <span><strong>Last Date:</strong> ${job.deadline}</span>
-                        <span><strong>Posted:</strong> ${job.posted}</span>
+                        <span><strong>Organization:</strong> ${sanitizeInput(job.organization)}</span>
+                        <span><strong>Location:</strong> ${sanitizeInput(job.location)}</span>
+                        <span><strong>Education:</strong> ${sanitizeInput(job.education)}</span>
+                        <span><strong>Vacancies:</strong> ${sanitizeInput(job.vacancies)}</span>
+                        <span><strong>Last Date:</strong> ${sanitizeInput(job.deadline)}</span>
+                        <span><strong>Posted:</strong> ${sanitizeInput(job.posted)}</span>
                     </div>
                     <div class="job-details-expanded" id="job-details-${job.id}">
-                        <p><strong>Description:</strong> ${job.details.description}</p>
-                        <p><strong>Eligibility:</strong> ${job.details.eligibility}</p>
-                        <p><strong>Salary:</strong> ${job.details.salary}</p>
-                        <p><strong>Application Process:</strong> ${job.details.applicationProcess}</p>
+                        <p><strong>Description:</strong> ${sanitizeInput(job.details.description)}</p>
+                        <p><strong>Eligibility:</strong> ${sanitizeInput(job.details.eligibility)}</p>
+                        <p><strong>Salary:</strong> ${sanitizeInput(job.details.salary)}</p>
+                        <p><strong>Application Process:</strong> ${sanitizeInput(job.details.applicationProcess)}</p>
                     </div>
-                    <a href="${job.link}" target="_blank" class="apply-btn" aria-label="Apply for ${job.title}">Apply Now</a>
+                    <a href="${sanitizeInput(job.link)}" target="_blank" rel="noopener" class="apply-btn" aria-label="Apply for ${job.title}">Apply Now</a>
                 `;
                 jobCardsContainer.appendChild(jobCard);
             });
@@ -1187,9 +1270,7 @@
                     const details = document.getElementById(`job-details-${jobId}`);
                     const isVisible = details.classList.contains('show');
 
-                    document.querySelectorAll('.job-details-expanded').forEach(d => {
-                        d.classList.remove('show');
-                    });
+                    document.querySelectorAll('.job-details-expanded').forEach(d => d.classList.remove('show'));
                     document.querySelectorAll('.job-title').forEach(t => {
                         t.classList.remove('active');
                         t.setAttribute('aria-expanded', 'false');
@@ -1217,11 +1298,11 @@
                 const card = document.createElement('div');
                 card.className = 'notification-card';
                 card.innerHTML = `
-                    <h3 class="notification-title">${notification.title}</h3>
+                    <h3 class="notification-title">${sanitizeInput(notification.title)}</h3>
                     <div class="notification-details">
-                        <span><strong>Date:</strong> ${notification.date}</span>
+                        <span><strong>Date:</strong> ${sanitizeInput(notification.date)}</span>
                     </div>
-                    <a href="${notification.link}" target="_blank" class="read-more-btn" aria-label="Read more about ${notification.title}">Read More</a>
+                    <a href="${sanitizeInput(notification.link)}" target="_blank" rel="noopener" class="read-more-btn" aria-label="Read more about ${notification.title}">Read More</a>
                 `;
                 notificationCardsContainer.appendChild(card);
             });
@@ -1233,12 +1314,12 @@
                 const card = document.createElement('div');
                 card.className = 'announcement-card';
                 card.innerHTML = `
-                    <h3 class="announcement-title">${announcement.title}</h3>
+                    <h3 class="announcement-title">${sanitizeInput(announcement.title)}</h3>
                     <div class="announcement-details">
-                        <span>${announcement.description}</span>
-                        <span><strong>Date:</strong> ${announcement.date}</span>
+                        <span>${sanitizeInput(announcement.description)}</span>
+                        <span><strong>Date:</strong> ${sanitizeInput(announcement.date)}</span>
                     </div>
-                    <a href="${announcement.link}" target="_blank" class="read-more-btn" aria-label="Read more about ${announcement.title}">Read More</a>
+                    <a href="${sanitizeInput(announcement.link)}" target="_blank" rel="noopener" class="read-more-btn" aria-label="Read more about ${announcement.title}">Read More</a>
                 `;
                 announcementCardsContainer.appendChild(card);
             });
@@ -1250,12 +1331,12 @@
                 const card = document.createElement('div');
                 card.className = 'update-card';
                 card.innerHTML = `
-                    <h3 class="update-title">${update.title}</h3>
+                    <h3 class="update-title">${sanitizeInput(update.title)}</h3>
                     <div class="update-details">
-                        <span>${update.description}</span>
-                        <span><strong>Date:</strong> ${update.date}</span>
+                        <span>${sanitizeInput(update.description)}</span>
+                        <span><strong>Date:</strong> ${sanitizeInput(update.date)}</span>
                     </div>
-                    <a href="${update.link}" target="_blank" class="read-more-btn" aria-label="Read more about ${update.title}">Read More</a>
+                    <a href="${sanitizeInput(update.link)}" target="_blank" rel="noopener" class="read-more-btn" aria-label="Read more about ${update.title}">Read More</a>
                 `;
                 updateCardsContainer.appendChild(card);
             });
@@ -1267,11 +1348,11 @@
                 const card = document.createElement('div');
                 card.className = 'other-card';
                 card.innerHTML = `
-                    <h3 class="other-title">${other.title}</h3>
+                    <h3 class="other-title">${sanitizeInput(other.title)}</h3>
                     <div class="other-details">
-                        <span>${other.description}</span>
+                        <span>${sanitizeInput(other.description)}</span>
                     </div>
-                    <a href="${other.link}" target="_blank" class="read-more-btn" aria-label="Read more about ${other.title}">Read More</a>
+                    <a href="${sanitizeInput(other.link)}" target="_blank" rel="noopener" class="read-more-btn" aria-label="Read more about ${other.title}">Read More</a>
                 `;
                 otherCardsContainer.appendChild(card);
             });
@@ -1286,10 +1367,10 @@
                     const card = document.createElement('div');
                     card.className = 'education-job-card';
                     card.innerHTML = `
-                        <h3 class="education-job-title">${level} Jobs</h3>
+                        <h3 class="education-job-title">${sanitizeInput(level)} Jobs</h3>
                         <div class="education-job-details">
                             ${filteredJobs.map(job => `
-                                <span><a href="${job.link}" target="_blank" aria-label="${job.title}">${job.title}</a> (${job.organization})</span>
+                                <span><a href="${sanitizeInput(job.link)}" target="_blank" rel="noopener" aria-label="${job.title}">${sanitizeInput(job.title)}</a> (${sanitizeInput(job.organization)})</span>
                             `).join('')}
                         </div>
                     `;
@@ -1298,19 +1379,20 @@
             });
         }
 
-        // RSS Feed for Sarkari Naukari Jobs (use a reliable RSS feed or API)
+        // RSS Feed for Sarkari Naukari Jobs
         async function fetchSarkariJobs() {
             const jobsList = document.getElementById('sarkari-jobs-list');
             jobsList.innerHTML = '<li>Loading latest jobs...</li>';
             try {
-                // Placeholder: Replace with a valid RSS feed or API endpoint
-                const response = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://example.com/rss');
+                // Note: RSS2JSON API may require an API key for production use
+                const response = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://www.sarkarijobfind.com/feed');
+                if (!response.ok) throw new Error('Network response was not ok');
                 const data = await response.json();
                 jobsList.innerHTML = '';
                 if (data.items && data.items.length > 0) {
                     data.items.slice(0, 10).forEach(item => {
                         const li = document.createElement('li');
-                        li.innerHTML = `<a href="${item.link}" target="_blank" rel="noopener" aria-label="${item.title}">${item.title}</a>`;
+                        li.innerHTML = `<a href="${sanitizeInput(item.link)}" target="_blank" rel="noopener" aria-label="${item.title}">${sanitizeInput(item.title)}</a>`;
                         jobsList.appendChild(li);
                     });
                 } else {
@@ -1321,6 +1403,56 @@
                 console.error('Error fetching Sarkari Naukari RSS:', error);
             }
         }
+
+        // RSS Feed Selector
+        const rssFeedSelector = document.getElementById('rssFeedSelector');
+        const customRssUrl = document.getElementById('customRssUrl');
+        const loadRssBtn = document.getElementById('loadRssBtn');
+        const rssFeedContent = document.getElementById('rssFeedContent');
+        const rssFeedTitle = document.getElementById('rssFeedTitle');
+        const rssFeedItems = document.getElementById('rssFeedItems');
+
+        rssFeedSelector.addEventListener('change', () => {
+            customRssUrl.classList.toggle('hidden', rssFeedSelector.value !== 'custom');
+        });
+
+        loadRssBtn.addEventListener('click', async () => {
+            let rssUrl = rssFeedSelector.value;
+            if (rssUrl === 'custom') {
+                rssUrl = customRssUrl.value.trim();
+                if (!rssUrl.match(/^https?:\/\/[^\s$.?#].[^\s]*$/)) {
+                    showAlert('Please enter a valid RSS URL.', 'error');
+                    return;
+                }
+            }
+
+            rssFeedItems.innerHTML = '<div class="p-4 text-center text-gray-500"><i class="fas fa-spinner fa-spin text-3xl mb-2 text-blue-400"></i><p>Loading feed...</p></div>';
+            try {
+                const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`);
+                if (!response.ok) throw new Error('Network response was not ok');
+                const data = await response.json();
+                rssFeedTitle.textContent = sanitizeInput(data.feed.title || 'RSS Feed');
+                rssFeedItems.innerHTML = '';
+                if (data.items && data.items.length > 0) {
+                    data.items.slice(0, 10).forEach(item => {
+                        const div = document.createElement('div');
+                        div.className = 'p-4 hover:bg-gray-50';
+                        div.innerHTML = `
+                            <h4 class="font-semibold text-blue-900"><a href="${sanitizeInput(item.link)}" target="_blank" rel="noopener" aria-label="${item.title}">${sanitizeInput(item.title)}</a></h4>
+                            <p class="text-sm text-gray-600">${item.pubDate ? new Date(item.pubDate).toLocaleDateString() : ''}</p>
+                            <p class="text-sm">${item.description ? sanitizeInput(item.description.substring(0, 100)) + '...' : ''}</p>
+                        `;
+                        rssFeedItems.appendChild(div);
+                    });
+                } else {
+                    rssFeedItems.innerHTML = '<div class="p-4 text-center text-gray-500"><p>No items found in this feed.</p></div>';
+                }
+            } catch (error) {
+                rssFeedItems.innerHTML = '<div class="p-4 text-center text-gray-500"><p>Could not load feed. Please try again later.</p></div>';
+                console.error('Error fetching RSS:', error);
+                showAlert('Error loading RSS feed.', 'error');
+            }
+        });
 
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
@@ -1348,13 +1480,17 @@
             );
         });
 
-        searchBar.addEventListener('input', () => {
+        const debouncedRenderJobs = debounce((value) => {
             renderJobs(
                 document.querySelector('.filter-btn.active').dataset.filter,
                 stateFilter.value,
                 educationFilter.value,
-                searchBar.value
+                value
             );
+        }, 300);
+
+        searchBar.addEventListener('input', (e) => {
+            debouncedRenderJobs(e.target.value);
         });
 
         sidebarLinks.forEach(link => {
@@ -1363,16 +1499,13 @@
                 const filter = link.dataset.filter;
                 if (filter) {
                     filterBtns.forEach(b => b.classList.remove('active'));
-                    document.querySelector(`.filter-btn[data-filter="${filter}"]`).classList.add('active');
-                    renderJobs(filter, stateFilter.value, educationFilter.value, searchBar.value);
+                    const activeBtn = document.querySelector(`.filter-btn[data-filter="${filter}"]`);
+                    if (activeBtn) {
+                        activeBtn.classList.add('active');
+                        renderJobs(filter, stateFilter.value, educationFilter.value, searchBar.value);
+                    }
                     window.scrollTo({
-                        top: document.getElementById('jobs').offsetTop,
-                        behavior: 'smooth'
-                    });
-                } else {
-                    const sectionId = link.getAttribute('href').substring(1);
-                    window.scrollTo({
-                        top: document.getElementById(sectionId).offsetTop,
+                        top: document.getElementById('jobs').offsetTop - 60,
                         behavior: 'smooth'
                     });
                 }
@@ -1388,7 +1521,7 @@
         renderEducationJobs();
         fetchSarkariJobs();
     </script>
-	<script async="async" data-cfasync="false" src="//pl26660002.profitableratecpm.com/be003e884e9c85368e9e10557802dc6b/invoke.js"></script>
-<div id="container-be003e884e9c85368e9e10557802dc6b"></div>
+    <script async defer src="//pl26660002.profitableratecpm.com/be003e884e9c85368e9e10557802dc6b/invoke.js"></script>
+    <div id="container-be003e884e9c85368e9e10557802dc6b"></div>
 </body>
 </html>
