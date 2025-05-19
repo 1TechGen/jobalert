@@ -16,11 +16,14 @@
     <meta property="og:url" content="https://jobalert.example">
     <meta property="og:image" content="https://jobalert.example/og-image.jpg">
     <meta property="og:site_name" content="Job Alert">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Job Alert - Free Government Job Notifications">
+    <meta name="twitter:description" content="Subscribe for daily government job alerts. Find opportunities in Central, State, Banking, Railway, and Defense sectors.">
+    <meta name="twitter:image" content="https://jobalert.example/og-image.jpg">
     <title>Job Alert - Free Government Job Notifications</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="canonical" href="https://jobalert.example">
     <link rel="icon" type="image/png" href="/favicon.png">
-    <!-- Single AdSense Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1893797822419017" crossorigin="anonymous"></script>
     <style>
         :root {
@@ -62,7 +65,6 @@
             flex-wrap: wrap;
         }
 
-        /* Header Styles */
         header {
             background-color: var(--primary-color);
             color: white;
@@ -121,7 +123,6 @@
             color: white;
         }
 
-        /* Sidebar */
         .sidebar {
             width: 250px;
             padding: 20px;
@@ -167,7 +168,6 @@
             color: white;
         }
 
-        /* Ad Spaces */
         .ad-space {
             margin: 20px 0;
             text-align: center;
@@ -178,13 +178,11 @@
             margin: 0 auto;
         }
 
-        /* Main Content */
         .main-content {
             flex: 1;
             padding: 20px 0;
         }
 
-        /* Hero Section */
         .hero {
             background-color: var(--gray-color);
             padding: 30px 0;
@@ -234,7 +232,6 @@
             background-color: var(--secondary-color);
         }
 
-        /* Job Listings Section */
         .job-listings {
             background-color: var(--light-color);
             margin-bottom: 30px;
@@ -391,7 +388,6 @@
             background-color: #218838;
         }
 
-        /* Footer */
         footer {
             background-color: var(--primary-color);
             color: white;
@@ -440,7 +436,6 @@
             font-size: 14px;
         }
 
-        /* Alert Notification */
         .alert {
             position: fixed;
             bottom: 20px;
@@ -465,7 +460,6 @@
             margin-right: 10px;
         }
 
-        /* Responsive Styles */
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
@@ -524,7 +518,6 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="container">
             <nav class="navbar">
@@ -532,23 +525,22 @@
                     <i class="fas fa-bell"></i>
                     Job Alert
                 </a>
-                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle mobile menu">
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle mobile menu" aria-expanded="false">
                     <i class="fas fa-bars"></i>
                 </button>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#jobs">Latest Jobs</a></li>
-                    <li><a href="#notifications">Notifications</a></li>
-                    <li><a href="#announcements">Announcements</a></li>
-                    <li><a href="#updates">New Updates</a></li>
-                    <li><a href="#education-jobs">Jobs by Education</a></li>
-                    <li><a href="#subscribe">Subscribe</a></li>
+                <ul class="nav-links" id="navLinks" role="navigation">
+                    <li><a href="#home" aria-label="Home">Home</a></li>
+                    <li><a href="#jobs" aria-label="Latest Jobs">Latest Jobs</a></li>
+                    <li><a href="#notifications" aria-label="Notifications">Notifications</a></li>
+                    <li><a href="#announcements" aria-label="Announcements">Announcements</a></li>
+                    <li><a href="#updates" aria-label="New Updates">New Updates</a></li>
+                    <li><a href="#education-jobs" aria-label="Jobs by Education">Jobs by Education</a></li>
+                    <li><a href="#subscribe" aria-label="Subscribe">Subscribe</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Top Banner Ad -->
     <div class="ad-space">
         <ins class="adsbygoogle"
              style="display:block"
@@ -561,34 +553,31 @@
         </script>
     </div>
 
-    <!-- Main Content -->
     <div class="container">
-        <!-- Sidebar -->
         <aside class="sidebar">
             <h3>Job Categories</h3>
             <ul class="sidebar-links">
-                <li><a href="#" data-filter="all">All Jobs</a></li>
-                <li><a href="#" data-filter="central">Central Govt</a></li>
-                <li><a href="#" data-filter="state">State Govt</a></li>
-                <li><a href="#" data-filter="banking">Banking</a></li>
-                <li><a href="#" data-filter="railway">Railway</a></li>
-                <li><a href="#" data-filter="defense">Defense</a></li>
+                <li><a href="#" data-filter="all" aria-label="All Jobs">All Jobs</a></li>
+                <li><a href="#" data-filter="central" aria-label="Central Government Jobs">Central Govt</a></li>
+                <li><a href="#" data-filter="state" aria-label="State Government Jobs">State Govt</a></li>
+                <li><a href="#" data-filter="banking" aria-label="Banking Jobs">Banking</a></li>
+                <li><a href="#" data-filter="railway" aria-label="Railway Jobs">Railway</a></li>
+                <li><a href="#" data-filter="defense" aria-label="Defense Jobs">Defense</a></li>
             </ul>
             <h3>Resources</h3>
             <ul class="sidebar-links">
-                <li><a href="#notifications">Notifications</a></li>
-                <li><a href="#announcements">Latest Announcements</a></li>
-                <li><a href="#others">Others</a></li>
-                <li><a href="#updates">New Updates</a></li>
-                <li><a href="#education-jobs">Jobs by Education</a></li>
-                <li><a href="https://education.jobalert.example" target="_blank" class="education-home">Click Here for Education Homepage</a></li>
+                <li><a href="#notifications" aria-label="Notifications">Notifications</a></li>
+                <li><a href="#announcements" aria-label="Latest Announcements">Latest Announcements</a></li>
+                <li><a href="#others" aria-label="Others">Others</a></li>
+                <li><a href="#updates" aria-label="New Updates">New Updates</a></li>
+                <li><a href="#education-jobs" aria-label="Jobs by Education">Jobs by Education</a></li>
+                <li><a href="https://education.jobalert.example" target="_blank" class="education-home" aria-label="Education Homepage">Click Here for Education Homepage</a></li>
             </ul>
-            <!-- Sidebar Ad -->
             <div class="ad-space">
                 <ins class="adsbygoogle"
                      style="display:block"
                      data-ad-client="ca-pub-1893797822419017"
-    		     data-ad-slot="3463848656"
+                     data-ad-slot="3463848656"
                      data-ad-format="auto"
                      data-full-width-responsive="true"></ins>
                 <script>
@@ -597,7 +586,6 @@
             </div>
         </aside>
 
-        <!-- Job Listings Section -->
         <section class="main-content job-listings" id="jobs">
             <div class="section-title">
                 <h2>Latest Government Jobs</h2>
@@ -658,17 +646,23 @@
                     <option value="Post Graduate">Post Graduate</option>
                 </select>
             </div>
-            <div class="job-cards" id="jobCards">
-                <!-- Job cards will be dynamically inserted here by JavaScript -->
-            </div>
+            <div class="job-cards" id="jobCards"></div>
         </section>
 
-        <!-- In-Content Ad (After Job Listings) -->
+        <section id="sarkari-jobs-section" class="main-content">
+            <div class="section-title">
+                <h2>Latest Sarkari Naukari Jobs</h2>
+            </div>
+            <ul id="sarkari-jobs-list">
+                <li>Loading latest jobs...</li>
+            </ul>
+        </section>
+
         <div class="ad-space">
             <ins class="adsbygoogle"
                  style="display:block"
                  data-ad-client="ca-pub-1893797822419017"
-     		 data-ad-slot="5871645877"
+                 data-ad-slot="5871645877"
                  data-ad-format="auto"
                  data-full-width-responsive="true"></ins>
             <script>
@@ -676,70 +670,53 @@
             </script>
         </div>
 
-        <!-- Notifications Section -->
         <section class="main-content notifications" id="notifications">
             <div class="section-title">
                 <h2>Notifications</h2>
             </div>
-            <div class="notification-cards" id="notificationCards">
-                <!-- Notification cards will be dynamically inserted here -->
-            </div>
+            <div class="notification-cards" id="notificationCards"></div>
         </section>
 
-        <!-- Latest Announcements Section -->
         <section class="main-content announcements" id="announcements">
             <div class="section-title">
                 <h2>Latest Announcements</h2>
             </div>
-            <div class="announcement-cards" id="announcementCards">
-                <!-- Announcement cards will be dynamically inserted here -->
-            </div>
+            <div class="announcement-cards" id="announcementCards"></div>
         </section>
 
-        <!-- Others Section -->
         <section class="main-content others" id="others">
             <div class="section-title">
                 <h2>Others</h2>
             </div>
-            <div class="other-cards" id="otherCards">
-                <!-- Other cards will be dynamically inserted here -->
-            </div>
+            <div class="other-cards" id="otherCards"></div>
         </section>
 
-        <!-- New Updates Section -->
         <section class="main-content updates" id="updates">
             <div class="section-title">
                 <h2>New Updates</h2>
             </div>
-            <div class="update-cards" id="updateCards">
-                <!-- Update cards will be dynamically inserted here -->
-            </div>
+            <div class="update-cards" id="updateCards"></div>
         </section>
 
-        <!-- Jobs by Education Section -->
         <section class="main-content education-jobs" id="education-jobs">
             <div class="section-title">
                 <h2>Jobs by Education</h2>
             </div>
-            <div class="education-job-cards" id="educationJobCards">
-                <!-- Education job cards will be dynamically inserted here -->
-            </div>
+            <div class="education-job-cards" id="educationJobCards"></div>
         </section>
     </div>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
             <h1>Free Government Job Alerts</h1>
             <p>Subscribe to receive daily job notifications for State and Central Government jobs directly to your email.</p>
             <form class="newsletter-form" id="newsletterForm">
                 <input type="email" placeholder="Your email address" required aria-label="Email address">
-                <button type="submit">Subscribe</button>
+                <button type="submit" aria-label="Subscribe to newsletter">Subscribe</button>
             </form>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -750,13 +727,13 @@
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#jobs">Latest Jobs</a></li>
-                        <li><a href="#notifications">Notifications</a></li>
-                        <li><a href="#announcements">Announcements</a></li>
-                        <li><a href="#updates">New Updates</a></li>
-                        <li><a href="#education-jobs">Jobs by Education</a></li>
-                        <li><a href="#subscribe">Subscribe</a></li>
+                        <li><a href="#home" aria-label="Home">Home</a></li>
+                        <li><a href="#jobs" aria-label="Latest Jobs">Latest Jobs</a></li>
+                        <li><a href="#notifications" aria-label="Notifications">Notifications</a></li>
+                        <li><a href="#announcements" aria-label="Announcements">Announcements</a></li>
+                        <li><a href="#updates" aria-label="New Updates">New Updates</a></li>
+                        <li><a href="#education-jobs" aria-label="Jobs by Education">Jobs by Education</a></li>
+                        <li><a href="#subscribe" aria-label="Subscribe">Subscribe</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -770,27 +747,22 @@
             <div class="footer-bottom">
                 <p>© 2025 Job Alert. All Rights Reserved.</p>
             </div>
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1893797822419017"
-     crossorigin="anonymous"></script>
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-format="autorelaxed"
-     data-ad-client="ca-pub-1893797822419017"
-     data-ad-slot="1947754873"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-	</div>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-format="autorelaxed"
+                 data-ad-client="ca-pub-1893797822419017"
+                 data-ad-slot="1947754873"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
         </div>
     </footer>
 
-    <!-- Alert Notification -->
-    <div class="alert" id="alertNotification">
+    <div class="alert" id="alertNotification" role="alert">
         <i class="fas fa-check-circle"></i>
         <span id="alertMessage">Success! You've subscribed to job alerts.</span>
     </div>
 
-    <!-- Structured Data for SEO -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -820,17 +792,18 @@
     }
     </script>
 
-    <!-- JavaScript -->
     <script>
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navLinks = document.getElementById('navLinks');
 
         mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
-                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-            mobileMenuBtn.setAttribute('aria-expanded', navLinks.classList.contains('active'));
+            const isExpanded = navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = isExpanded ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            mobileMenuBtn.setAttribute('aria-expanded', isExpanded);
+            if (isExpanded) {
+                navLinks.querySelector('a').focus();
+            }
         });
 
         document.querySelectorAll('.nav-links a').forEach(link => {
@@ -854,12 +827,17 @@
             }, 3000);
         }
 
-        newsletterForm.addEventListener('submit', (e) => {
+        newsletterForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const email = e.target.querySelector('input').value;
-            console.log('Subscribed email:', email);
-            showAlert('Success! You will now receive job alerts.');
-            e.target.reset();
+            try {
+                // Replace with actual API call to subscribe
+                console.log('Subscribed email:', email);
+                showAlert('Success! You will now receive job alerts.');
+                e.target.reset();
+            } catch (error) {
+                showAlert('Error subscribing. Please try again.', 'error');
+            }
         });
 
         // Job Filtering
@@ -875,7 +853,7 @@
         const educationJobCardsContainer = document.getElementById('educationJobCards');
         const sidebarLinks = document.querySelectorAll('.sidebar-links a[data-filter]');
 
-        // Sample data
+        // Sample data (replace with API calls in production)
         const jobs = [
             {
                 id: 1,
@@ -1095,7 +1073,6 @@
             }
         ];
 
-        // Render job cards
         function renderJobs(typeFilter = 'all', stateFilterValue = 'all', educationFilterValue = 'all', searchQuery = '') {
             jobCardsContainer.innerHTML = '';
             let filteredJobs = jobs;
@@ -1120,11 +1097,16 @@
                 );
             }
 
+            if (filteredJobs.length === 0) {
+                jobCardsContainer.innerHTML = '<p>No jobs found matching your criteria.</p>';
+                return;
+            }
+
             filteredJobs.forEach(job => {
                 const jobCard = document.createElement('div');
                 jobCard.className = 'job-card';
                 jobCard.innerHTML = `
-                    <h3 class="job-title" data-job-id="${job.id}">${job.title} <i class="fas fa-chevron-down"></i></h3>
+                    <h3 class="job-title" data-job-id="${job.id}" role="button" aria-expanded="false" tabindex="0">${job.title} <i class="fas fa-chevron-down"></i></h3>
                     <div class="job-details">
                         <span><strong>Organization:</strong> ${job.organization}</span>
                         <span><strong>Location:</strong> ${job.location}</span>
@@ -1139,7 +1121,7 @@
                         <p><strong>Salary:</strong> ${job.details.salary}</p>
                         <p><strong>Application Process:</strong> ${job.details.applicationProcess}</p>
                     </div>
-                    <a href="${job.link}" target="_blank" class="apply-btn">Apply Now</a>
+                    <a href="${job.link}" target="_blank" class="apply-btn" aria-label="Apply for ${job.title}">Apply Now</a>
                 `;
                 jobCardsContainer.appendChild(jobCard);
             });
@@ -1155,56 +1137,25 @@
                     });
                     document.querySelectorAll('.job-title').forEach(t => {
                         t.classList.remove('active');
+                        t.setAttribute('aria-expanded', 'false');
                     });
 
                     if (!isVisible) {
                         details.classList.add('show');
                         title.classList.add('active');
+                        title.setAttribute('aria-expanded', 'true');
+                    }
+                });
+
+                title.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        title.click();
                     }
                 });
             });
         }
 
-
-	    <!-- Add this section where you want the job alerts to appear, e.g., below your newsletter or main content -->
-<section id="sarkari-jobs-section">
-  <h2>Latest Sarkari Naukari Jobs</h2>
-  <ul id="sarkari-jobs-list">
-    <li>Loading latest jobs...</li>
-  </ul>
-</section>
-
-<script>
-  // Replace with actual Sarkari Naukari RSS feed URL
-  const rssUrl = 'https://www.sarkariresult.com/rss.php';
-  const apiUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(rssUrl);
-
-  function fetchSarkariJobs() {
-    fetch(apiUrl)
-      .then(response => response.json())
-      .then(data => {
-        const jobsList = document.getElementById('sarkari-jobs-list');
-        jobsList.innerHTML = ''; // Clear existing jobs
-        if (data.items && data.items.length > 0) {
-          data.items.slice(0, 10).forEach(item => {
-            const li = document.createElement('li');
-            li.innerHTML = `<a href="${item.link}" target="_blank" rel="noopener">${item.title}</a>`;
-            jobsList.appendChild(li);
-          });
-        } else {
-          jobsList.innerHTML = '<li>No jobs found.</li>';
-        }
-      })
-      .catch(error => {
-        document.getElementById('sarkari-jobs-list').innerHTML = '<li>Could not load jobs.</li>';
-        console.error('Error fetching Sarkari Naukari RSS:', error);
-      });
-  }
-
-  // Fetch jobs on page load
-  fetchSarkariJobs();
-</script>
-        // Render notifications
         function renderNotifications() {
             notificationCardsContainer.innerHTML = '';
             notifications.forEach(notification => {
@@ -1215,13 +1166,12 @@
                     <div class="notification-details">
                         <span><strong>Date:</strong> ${notification.date}</span>
                     </div>
-                    <a href="${notification.link}" target="_blank" class="read-more-btn">Read More</a>
+                    <a href="${notification.link}" target="_blank" class="read-more-btn" aria-label="Read more about ${notification.title}">Read More</a>
                 `;
                 notificationCardsContainer.appendChild(card);
             });
         }
 
-        // Render announcements
         function renderAnnouncements() {
             announcementCardsContainer.innerHTML = '';
             announcements.forEach(announcement => {
@@ -1233,13 +1183,12 @@
                         <span>${announcement.description}</span>
                         <span><strong>Date:</strong> ${announcement.date}</span>
                     </div>
-                    <a href="${announcement.link}" target="_blank" class="read-more-btn">Read More</a>
+                    <a href="${announcement.link}" target="_blank" class="read-more-btn" aria-label="Read more about ${announcement.title}">Read More</a>
                 `;
                 announcementCardsContainer.appendChild(card);
             });
         }
 
-        // Render updates
         function renderUpdates() {
             updateCardsContainer.innerHTML = '';
             updates.forEach(update => {
@@ -1251,13 +1200,12 @@
                         <span>${update.description}</span>
                         <span><strong>Date:</strong> ${update.date}</span>
                     </div>
-                    <a href="${update.link}" target="_blank" class="read-more-btn">Read More</a>
+                    <a href="${update.link}" target="_blank" class="read-more-btn" aria-label="Read more about ${update.title}">Read More</a>
                 `;
                 updateCardsContainer.appendChild(card);
             });
         }
 
-        // Render others
         function renderOthers() {
             otherCardsContainer.innerHTML = '';
             others.forEach(other => {
@@ -1268,13 +1216,12 @@
                     <div class="other-details">
                         <span>${other.description}</span>
                     </div>
-                    <a href="${other.link}" target="_blank" class="read-more-btn">Read More</a>
+                    <a href="${other.link}" target="_blank" class="read-more-btn" aria-label="Read more about ${other.title}">Read More</a>
                 `;
                 otherCardsContainer.appendChild(card);
             });
         }
 
-        // Render jobs by education
         function renderEducationJobs() {
             educationJobCardsContainer.innerHTML = '';
             const educationLevels = ['10th Pass', '12th Pass', 'Graduate', 'Post Graduate'];
@@ -1287,7 +1234,7 @@
                         <h3 class="education-job-title">${level} Jobs</h3>
                         <div class="education-job-details">
                             ${filteredJobs.map(job => `
-                                <span><a href="${job.link}" target="_blank">${job.title}</a> (${job.organization})</span>
+                                <span><a href="${job.link}" target="_blank" aria-label="${job.title}">${job.title}</a> (${job.organization})</span>
                             `).join('')}
                         </div>
                     `;
@@ -1296,7 +1243,30 @@
             });
         }
 
-        // Filter jobs by type
+        // RSS Feed for Sarkari Naukari Jobs (use a reliable RSS feed or API)
+        async function fetchSarkariJobs() {
+            const jobsList = document.getElementById('sarkari-jobs-list');
+            jobsList.innerHTML = '<li>Loading latest jobs...</li>';
+            try {
+                // Placeholder: Replace with a valid RSS feed or API endpoint
+                const response = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://example.com/rss');
+                const data = await response.json();
+                jobsList.innerHTML = '';
+                if (data.items && data.items.length > 0) {
+                    data.items.slice(0, 10).forEach(item => {
+                        const li = document.createElement('li');
+                        li.innerHTML = `<a href="${item.link}" target="_blank" rel="noopener" aria-label="${item.title}">${item.title}</a>`;
+                        jobsList.appendChild(li);
+                    });
+                } else {
+                    jobsList.innerHTML = '<li>No jobs found.</li>';
+                }
+            } catch (error) {
+                jobsList.innerHTML = '<li>Could not load jobs. Please try again later.</li>';
+                console.error('Error fetching Sarkari Naukari RSS:', error);
+            }
+        }
+
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 filterBtns.forEach(b => b.classList.remove('active'));
@@ -1305,7 +1275,6 @@
             });
         });
 
-        // Filter jobs by state
         stateFilter.addEventListener('change', () => {
             renderJobs(
                 document.querySelector('.filter-btn.active').dataset.filter,
@@ -1315,7 +1284,6 @@
             );
         });
 
-        // Filter jobs by education
         educationFilter.addEventListener('change', () => {
             renderJobs(
                 document.querySelector('.filter-btn.active').dataset.filter,
@@ -1325,7 +1293,6 @@
             );
         });
 
-        // Search jobs
         searchBar.addEventListener('input', () => {
             renderJobs(
                 document.querySelector('.filter-btn.active').dataset.filter,
@@ -1335,7 +1302,6 @@
             );
         });
 
-        // Sidebar filter links
         sidebarLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -1365,6 +1331,7 @@
         renderUpdates();
         renderOthers();
         renderEducationJobs();
+        fetchSarkariJobs();
     </script>
 	<script async="async" data-cfasync="false" src="//pl26660002.profitableratecpm.com/be003e884e9c85368e9e10557802dc6b/invoke.js"></script>
 <div id="container-be003e884e9c85368e9e10557802dc6b"></div>
