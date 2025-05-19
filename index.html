@@ -564,15 +564,24 @@
                 <li><a href="#" data-filter="railway" aria-label="Railway Jobs">Railway</a></li>
                 <li><a href="#" data-filter="defense" aria-label="Defense Jobs">Defense</a></li>
             </ul>
-            <h3>Resources</h3>
-            <ul class="sidebar-links">
-                <li><a href="#notifications" aria-label="Notifications">Notifications</a></li>
-                <li><a href="#announcements" aria-label="Latest Announcements">Latest Announcements</a></li>
-                <li><a href="#others" aria-label="Others">Others</a></li>
-                <li><a href="#updates" aria-label="New Updates">New Updates</a></li>
-                <li><a href="#education-jobs" aria-label="Jobs by Education">Jobs by Education</a></li>
-                <li><a href="https://education.jobalert.example" target="_blank" class="education-home" aria-label="Education Homepage">Click Here for Education Homepage</a></li>
-            </ul>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-lg font-bold text-blue-900 mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="#notifications" class="text-blue-700 hover:text-blue-900 transition flex items-center">
+                        <i class="fas fa-bell mr-2"></i> Notifications
+                    </a></li>
+                    <li><a href="#rss-feeds" class="text-blue-700 hover:text-blue-900 transition flex items-center">
+                        <i class="fas fa-rss mr-2"></i> RSS Feeds
+                    </a></li>
+                    <li><a href="https://www.sarkarijobfind.com" target="_blank" class="text-blue-700 hover:text-blue-900 transition flex items-center">
+                        <i class="fas fa-external-link-alt mr-2"></i> SarkariJobFind
+                    </a></li>
+                    <li><a href="#subscribe" class="text-blue-700 hover:text-blue-900 transition flex items-center">
+                        <i class="fas fa-envelope mr-2"></i> Subscribe
+                    </a></li>
+                </ul>
+            </div>
+        	</ul>
             <div class="ad-space">
                 <ins class="adsbygoogle"
                      style="display:block"
@@ -676,6 +685,52 @@
             </div>
             <div class="notification-cards" id="notificationCards"></div>
         </section>
+
+	     <!-- RSS Feeds Section -->
+            <section id="rss-feeds" class="mb-12">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="bg-blue-900 text-white px-6 py-4">
+                        <h2 class="text-xl font-bold flex items-center">
+                            <i class="fas fa-rss mr-2"></i> RSS Job Feeds
+                        </h2>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="mb-6 rss-feed-selector p-4 rounded-lg">
+                            <div class="flex items-center mb-3">
+                                <i class="fas fa-link mr-2 text-blue-700"></i>
+                                <h3 class="font-bold text-blue-900">Select RSS Feed Source</h3>
+                            </div>
+                            <div class="flex flex-col sm:flex-row gap-3">
+                                <select id="rssFeedSelector" class="flex-grow px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <option value="https://www.sarkarijobfind.com/feed">SarkariJobFind.com</option>
+                                    <option value="https://www.sarkariresult.com/rss/latest.xml">SarkariResult.com</option>
+                                    <option value="https://www.freejobalert.com/rss/latest.xml">FreeJobAlert.com</option>
+                                    <option value="https://www.sarkariexam.com/rss/latest.xml">SarkariExam.com</option>
+                                    <option value="custom">Custom RSS Feed</option>
+                                </select>
+                                <input type="text" id="customRssUrl" placeholder="Enter custom RSS URL" 
+                                    class="hidden px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <button id="loadRssBtn" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition">
+                                    Load Feed
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div id="rssFeedContent" class="border rounded-lg overflow-hidden">
+                            <div class="bg-gray-100 px-4 py-3 border-b flex justify-between items-center">
+                                <h3 class="font-bold text-blue-900">Feed Content</h3>
+                                <span id="rssFeedTitle" class="text-sm text-gray-600"></span>
+                            </div>
+                            <div id="rssFeedItems" class="divide-y">
+                                <div class="p-4 text-center text-gray-500">
+                                    <i class="fas fa-rss-square text-3xl mb-2 text-blue-400"></i>
+                                    <p>Select an RSS feed source to load job listings</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
         <section class="main-content announcements" id="announcements">
             <div class="section-title">
