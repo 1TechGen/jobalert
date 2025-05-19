@@ -41,6 +41,245 @@
             --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            loading: lazy;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 28px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .sidebar {
+            width: 250px;
+            padding: 20px;
+            background-color: var(--gray-color);
+            margin-right: 20px;
+        }
+
+        .sidebar h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .sidebar-links {
+            list-style: none;
+        }
+
+        .sidebar-links li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .sidebar-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .ad-space {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .ad-space ins {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px 0;
+        }
+
+        .hero {
+            background-color: var(--gray-color);
+            padding: 30px 0;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+
+        .hero .newsletter-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero .newsletter-form input,
+        .hero .newsletter-form button {
+            margin: 5px;
+        }
+
+        .hero .newsletter-form input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            font-size: 14px;
+        }
+
+        .hero .newsletter-form button {
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .hero .newsletter-form button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .job-listings {
+            background-color: var(--light-color);
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            margin-bottom: 20px;
+        }
+
+        .section-title h2 {
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+
+        .job-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        .search-bar {
+            flex: 1;
+            min-width: 200px;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            font-size: 14px;
+        }
+
+        .filter-btn {
+            padding: 8px 15px;
+            background-color: var(--gray-color);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .state-filter, .education-filter {
+            padding: 8px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            font-size: 14px;
+            background-color: var(--gray-color);
+            cursor: pointer;
+            min-width: 200px;
+        }
+
         .job-card {
             transition: all 0.3s ease;
         }
