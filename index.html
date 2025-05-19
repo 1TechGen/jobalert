@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="canonical" href="https://www.jobalert.com">
     <link rel="icon" type="image/png" href="https://via.placeholder.com/32?text=JA">
+    <script src="https://cdn.tailwindcss.com"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1893797822419017" crossorigin="anonymous"></script>
     <style>
         :root {
@@ -788,7 +789,7 @@
         "potentialAction": {
             "@type": "SearchAction",
             "target": "https://www.jobalert.com/#jobs?search={search_term_string}",
-            "query-input": "required name=searchテンンプレート_term_string"
+            "query-input": "required name=search_term_string"
         }
     }
     </script>
@@ -939,21 +940,6 @@
             });
         }
 
-        // Note: Server-side web-push implementation should be handled separately
-        /*
-        const webPush = require('web-push');
-        webPush.setVapidDetails(
-            'mailto:support@jobalert.com',
-            'BAz55DhvYTuB0a3EBHkMJssomGNSEX6rxwgnzxDvhN9dSzuMOPz_PaXSADJU6Qn3tUQ3ZLOBqjRPDVuLrVofVSM',
-            'xM2yHO_PBNjK8vLQCJ5SZ5fI45xj_LrHwoHgAfZKtVw'
-        );
-        webPush.sendNotification(subscription, JSON.stringify({
-            title: 'New Job Alert',
-            body: 'Check out the latest government job openings!',
-            url: 'https://www.jobalert.com/#jobs'
-        }));
-        */
-
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navLinks = document.getElementById('navLinks');
@@ -1092,7 +1078,7 @@
                 link: 'https://www.mahapolice.gov.in/police-recru.php',
                 details: {
                     description: 'Constable positions in Maharashtra Police for law enforcement duties.',
-                    eligibitility: '12th pass from a recognized board. Age: 19-28 years.',
+                    eligibility: '12th pass from a recognized board. Age: 19-28 years.',
                     salary: 'INR 21,700 - 69,100 per month.',
                     applicationProcess: 'Online application via Maharashtra Police website. Fee: INR 450.'
                 }
@@ -1230,7 +1216,7 @@
             if (searchQuery) {
                 const query = sanitizeInput(searchQuery).toLowerCase();
                 filteredJobs = filteredJobs.filter(job => 
-                    job.title.toLowerCase().includes(query) || 
+                    job.title.toLowerCase().includes(query) ||
                     job.organization.toLowerCase().includes(query)
                 );
             }
