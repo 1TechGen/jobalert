@@ -10,57 +10,6 @@
     <meta name="robots" content="index, follow">
     <meta name="author" content="Job Alert Team">
     <meta name="theme-color" content="#004d99">
-    <!--
-        MODIFIED CSP:
-        This is a more permissive CSP to allow AdSense and other ad networks to function.
-        It's crucial to test thoroughly and restrict further if possible, but ad networks
-        often require broad permissions.
-    -->
-    <meta http-equiv="Content-Security-Policy" content="
-        default-src 'self';
-        script-src 'self'
-            https://cdn.tailwindcss.com
-            https://cdnjs.cloudflare.com
-            'unsafe-inline'
-            blob: /* For inline Service Worker registration */
-            https://pagead2.googlesyndication.com
-            https://*.googlesyndication.com
-            https://*.g.doubleclick.net
-            https://*.google.com
-            https://*.googletagservices.com
-            https://*.google-analytics.com
-            https://pl26660002.profitableratecpm.com
-            https://*.profitableratecpm.com;
-        style-src 'self'
-            https://cdnjs.cloudflare.com
-            'unsafe-inline' /* AdSense might inject inline styles */
-            https://fonts.googleapis.com /* If ads use Google Fonts */
-            https://pagead2.googlesyndication.com
-            https://*.googlesyndication.com;
-        img-src 'self'
-            https://via.placeholder.com
-            data:
-            https://*.googlesyndication.com
-            https://*.g.doubleclick.net
-            https://*.google.com
-            https://*.googleusercontent.com /* For images in ads */
-            https://*.profitableratecpm.com;
-        connect-src 'self'
-            https://api.rss2json.com
-            https://*.googlesyndication.com
-            https://*.g.doubleclick.net
-            https://*.google.com
-            https://*.google-analytics.com
-            https://*.profitableratecpm.com;
-        frame-src 'self'
-            https://*.googlesyndication.com
-            https://*.g.doubleclick.net
-            https://*.google.com
-            https://*.profitableratecpm.com;
-        font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; /* For FontAwesome and potential ad fonts */
-        worker-src 'self' blob:; /* For Service Worker */
-    ">
-
     <meta property="og:title" content="Job Alert - Free Government Job Notifications">
     <meta property="og:description" content="Subscribe for daily government job alerts. Find opportunities in Central, State, Banking, Railway, and Defense sectors.">
     <meta property="og:type" content="website">
