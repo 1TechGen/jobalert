@@ -740,9 +740,9 @@
                             <div class="flex flex-col sm:flex-row gap-3">
                                 <select id="rssFeedSelector" class="flex-grow px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Select RSS feed source">
                                     <option value="https://www.sarkarijobfind.com/feed">SarkariJobFind.com</option>
-                                    <option value="https://www.sarkariresult.com/rss/latest.xml">SarkariResult.com</option>
+                                    <option value="https://www.sarkariresult.com/feed">SarkariResult.com</option>
                                     <option value="https://www.freejobalert.com/feed">FreeJobAlert.com</option>
-                                    <option value="https://www.sarkariexam.com/rss/latest.xml">SarkariExam.com</option>
+                                    <option value="https://www.sarkariexam.com/feed">SarkariExam.com</option>
                                     <option value="custom">Custom RSS Feed</option>
                                 </select>
                                 <input type="text" id="customRssUrl" placeholder="Enter custom RSS URL" class="hidden flex-grow px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Enter custom RSS URL">
@@ -831,8 +831,8 @@
                 <div class="footer-column">
                     <h3>Contact Us</h3>
                     <ul class="footer-links">
-                        <li><i class="fas fa-envelope"></i> support@jobalert.com</li>
-                        <li><i class="fas fa-phone"></i> +91 9876543210</li>
+                        <li><i class="fas fa-envelope"></i> bobmanjesh@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> +91 8777740381</li>
                     </ul>
                 </div>
             </div>
@@ -1010,7 +1010,7 @@
 
         // VAPID Public Key (replace with your actual VAPID public key if you have one for push notifications)
         // This is a placeholder key. Generate your own pair (public/private).
-        const vapidPublicKey = 'BAz55DhvYTuB0a3EBHkMJssomGNSEX6rxwgnzxDvhN9dSzuMOPz_PaXSADJU6Qn3tUQ3ZLOBqjRPDVuLrVofVSM'; // Example: 'BAz55DhvYTuB0a3EBHkMJssomGNSEX6rxwgnzxDvhN9dSzuMOPz_PaXSADJU6Qn3tUQ3ZLOBqjRPDVuLrVofVSM';
+        const vapidPublicKey = 'YOUR_VAPID_PUBLIC_KEY_HERE_IF_YOU_HAVE_ONE'; // Example: 'BAz55DhvYTuB0a3EBHkMJssomGNSEX6rxwgnzxDvhN9dSzuMOPz_PaXSADJU6Qn3tUQ3ZLOBqjRPDVuLrVofVSM';
 
 
         function urlBase64ToUint8Array(base64String) {
@@ -1037,7 +1037,7 @@
         if (enableNotificationsBtn) {
             if ('Notification' in window && 'PushManager' in window && 'serviceWorker' in navigator) {
                 enableNotificationsBtn.addEventListener('click', () => {
-                    if (!vapidPublicKey || vapidPublicKey === 'BAz55DhvYTuB0a3EBHkMJssomGNSEX6rxwgnzxDvhN9dSzuMOPz_PaXSADJU6Qn3tUQ3ZLOBqjRPDVuLrVofVSM') {
+                    if (!vapidPublicKey || vapidPublicKey === 'YOUR_VAPID_PUBLIC_KEY_HERE_IF_YOU_HAVE_ONE') {
                         showAlert('Push notification setup is incomplete (missing VAPID key).', 'error');
                         console.warn('VAPID Public Key is not set. Push notifications will not work.');
                         return;
@@ -1059,7 +1059,7 @@
                 });
 
                 // Check initial permission status
-                if (Notification.permission === 'granted' && vapidPublicKey && vapidPublicKey !== 'BAz55DhvYTuB0a3EBHkMJssomGNSEX6rxwgnzxDvhN9dSzuMOPz_PaXSADJU6Qn3tUQ3ZLOBqjRPDVuLrVofVSM') {
+                if (Notification.permission === 'granted' && vapidPublicKey && vapidPublicKey !== 'YOUR_VAPID_PUBLIC_KEY_HERE_IF_YOU_HAVE_ONE') {
                     navigator.serviceWorker.ready.then(registration => {
                         registration.pushManager.getSubscription().then(subscription => {
                             if (subscription) {
@@ -1082,7 +1082,7 @@
 
 
         function subscribeToPush() {
-            if (!vapidPublicKey || vapidPublicKey === 'BAz55DhvYTuB0a3EBHkMJssomGNSEX6rxwgnzxDvhN9dSzuMOPz_PaXSADJU6Qn3tUQ3ZLOBqjRPDVuLrVofVSM') {
+            if (!vapidPublicKey || vapidPublicKey === 'YOUR_VAPID_PUBLIC_KEY_HERE_IF_YOU_HAVE_ONE') {
                 showAlert('Push notification setup is incomplete (missing VAPID key). Cannot subscribe.', 'error');
                 return;
             }
