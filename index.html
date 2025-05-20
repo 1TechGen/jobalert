@@ -1010,8 +1010,8 @@
 
         // VAPID Public Key (replace with your actual VAPID public key if you have one for push notifications)
         // This is a placeholder key. Generate your own pair (public/private).
-        const vapidPublicKey = 'BAz55DhvYTuB0a3EBHkMJssomGNSEX6rxwgnzxDvhN9dSzuMOPz_PaXSADJU6Qn3tUQ3ZLOBqjRPDVuLrVofVSM',
-'xM2yHO_PBNjK8vLQCJ5SZ5fI45xj_LrHwoHgAfZKtVw';
+        const vapidPublicKey = 'YOUR_VAPID_PUBLIC_KEY_HERE_IF_YOU_HAVE_ONE'; // Example: 'BAz55DhvYTuB0a3EBHkMJssomGNSEX6rxwgnzxDvhN9dSzuMOPz_PaXSADJU6Qn3tUQ3ZLOBqjRPDVuLrVofVSM';
+
 
         function urlBase64ToUint8Array(base64String) {
             if (!base64String || typeof base64String !== 'string') { // Added type check
@@ -1037,7 +1037,7 @@
         if (enableNotificationsBtn) {
             if ('Notification' in window && 'PushManager' in window && 'serviceWorker' in navigator) {
                 enableNotificationsBtn.addEventListener('click', () => {
-                    if (!vapidPublicKey || vapidPublicKey === 'BAz55DhvYTuB0a3EBHkMJssomGNSEX6rxwgnzxDvhN9dSzuMOPz_PaXSADJU6Qn3tUQ3ZLOBqjRPDVuLrVofVSM') {
+                    if (!vapidPublicKey || vapidPublicKey === 'YOUR_VAPID_PUBLIC_KEY_HERE_IF_YOU_HAVE_ONE') {
                         showAlert('Push notification setup is incomplete (missing VAPID key).', 'error');
                         console.warn('VAPID Public Key is not set. Push notifications will not work.');
                         return;
@@ -1059,7 +1059,7 @@
                 });
 
                 // Check initial permission status
-                if (Notification.permission === 'granted' && vapidPublicKey && vapidPublicKey !== 'BAz55DhvYTuB0a3EBHkMJssomGNSEX6rxwgnzxDvhN9dSzuMOPz_PaXSADJU6Qn3tUQ3ZLOBqjRPDVuLrVofVSM') {
+                if (Notification.permission === 'granted' && vapidPublicKey && vapidPublicKey !== 'YOUR_VAPID_PUBLIC_KEY_HERE_IF_YOU_HAVE_ONE') {
                     navigator.serviceWorker.ready.then(registration => {
                         registration.pushManager.getSubscription().then(subscription => {
                             if (subscription) {
@@ -1082,7 +1082,7 @@
 
 
         function subscribeToPush() {
-            if (!vapidPublicKey || vapidPublicKey === 'BAz55DhvYTuB0a3EBHkMJssomGNSEX6rxwgnzxDvhN9dSzuMOPz_PaXSADJU6Qn3tUQ3ZLOBqjRPDVuLrVofVSM') {
+            if (!vapidPublicKey || vapidPublicKey === 'YOUR_VAPID_PUBLIC_KEY_HERE_IF_YOU_HAVE_ONE') {
                 showAlert('Push notification setup is incomplete (missing VAPID key). Cannot subscribe.', 'error');
                 return;
             }
